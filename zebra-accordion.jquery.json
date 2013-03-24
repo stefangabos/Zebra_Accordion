@@ -1,7 +1,7 @@
 {
     "name": "zebra-accordion",
     "title": "Zebra_Accordion",
-    "description": "A tiny accordion jQuery plugin",
+    "description": "A small-footprint (3 KB minified), easily configurable, fully customizable, cross-browser accordion jQuery plugin",
     "keywords": [
         "accordion",
         "collapsible"
