@@ -1,0 +1,37 @@
+body { }
+
+/* = MAIN WRAPPER
+----------------------------------------------------------------------------------------------------------------------*/
+.main-wrapper { width: 960px; margin: 0 auto; text-align: left }
+
+h3 { font-size: 31px }
+h3, p, pre { margin: 10px 0 }
+.syntaxhighlighter { padding: 5px 0 }
+
+dl.Zebra_Accordion { width: 400px; font-family: Arial, sans-serif; font-size: 12px }
+dl.Zebra_Accordion dt { background: #000; color: #FFF; font-weight: bold; padding: 5px }
+dl.Zebra_Accordion dd { background: #EFEFEF; padding: 15px; margin: 1px 0 }
+
+dl.Zebra_Accordion dt.Zebra_Accordion_Expanded { background: #C40000 }
+
+/* = MISCELLANEOUS
+----------------------------------------------------------------------------------------------------------------------*/
+.align-center   { text-align: center }
+.align-left     { text-align: left }
+.align-right    { text-align: right }
+.block          { display: block }
+.bottom         { margin-bottom: 0; padding-bottom: 0 }
+.center         { text-align: center }
+.clear          { clear: both }
+.first          { margin-left: 0; padding-left: 0 }
+.hidden         { visibility: hidden }
+.highlight      { background: #ccf }
+.inline         { display: inline }
+.last           { margin-right: 0; padding-right: 0 }
+.left           { float: left }
+.none           { display: none }
+.nowrap         { white-space: nowrap }
+.right          { float: right }
+.stretch        { width: 100% }
+.top            { margin-top: 0; padding-top: 0 }
+.visible        { visibility: visible }
