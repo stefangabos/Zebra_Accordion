@@ -1,10 +1,10 @@
 ##Zebra_Accordion
 
-A tiny accordion jQuery plugin
+####A tiny accordion jQuery plugin
 
 Zebra_Accordion is a tiny (3KB minified) accordion jQuery plugin. It transforms a basic definition list, without requiring any other specific markup, into a small-footprint, easily configurable, fully customizable, cross-browser accordion widget, useful for better organizing larger groups of content.
 
-##Features:
+##Features
 
  - no additional markup required other than a basic definition list;
  - appearance is easily customizable through CSS;
@@ -15,6 +15,4 @@ Zebra_Accordion is a tiny (3KB minified) accordion jQuery plugin. It transforms 
  - callback functions can be used for further customizations;
  - works in all major browsers (Firefox, Opera, Safari, Chrome, Internet Explorer 6+)
 
-## Links
-
-More on the **[project's homepage](http://stefangabos.ro/jquery/zebra_accordion/)**
+Find out more on the **[project's homepage](http://stefangabos.ro/jquery/zebra_accordion/)**
