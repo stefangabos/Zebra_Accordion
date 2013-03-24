@@ -79,11 +79,14 @@
             show:                   0,                          //  The index (0 based) of the content block to be
                                                                 //  expanded by default.
                                                                 //
-                                                                //  If "collapsible" is TRUE, the value of this property
-                                                                //  can also be boolean FALSE, indicating that all tabs
-                                                                //  should be collapsed by default, boolean TRUE, indicating
-                                                                //  that all tabs should be expanded by default, or an
-                                                                //  array with the indexes of tabs to be expanded by default.
+                                                                //  The value of this property can also be boolean FALSE,
+                                                                //  indicating that all tabs should be collapsed by default.
+                                                                //
+                                                                //  If the value of the "collapsible" property is TRUE,
+                                                                //  the value of this property can also be boolean TRUE,
+                                                                //  indicating that all tabs should be expanded by default,
+                                                                //  or an array with the indexes of tabs to be expanded
+                                                                //  by default.
                                                                 //
                                                                 //  Default is 0
 
