@@ -1,6 +1,0 @@
-- if the "collapsible" property is set to TRUE, the "show" property can now also be an array of values representing tabs to be expanded by default, or boolean TRUE indicating that all tabs should be expanded by default;
-- fixed a bug where when resizing the browser window, all tabs would be collapsed, except for the first one;
-- better error handling for the "show" and "hide" methods;
-- fixed some small issues in the code;
-
-- sa se deschida la hash in url
