@@ -15,4 +15,38 @@ Zebra_Accordion is a tiny (3KB minified) accordion jQuery plugin. It transforms 
  - callback functions can be used for further customizations;
  - works in all major browsers (Firefox, Opera, Safari, Chrome, Internet Explorer 6+)
 
-Find out more on the **[project's homepage](http://stefangabos.ro/jquery/zebra_accordion/)**
+##Requirements
+
+**Zebra_Accordion** has no dependencies other than jQuery 1.5.2+
+
+##How to use
+
+First, load the latest version of jQuery from a CDN and provide a fallback to a local source, like:
+
+```html
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="public/javascript/jquery-1.9.1.js"><\/script>')</script>
+```
+
+Load the Zebra_Accordion plugin
+
+```html
+<script type="text/javascript" src="path/to/zebra_accordion.js"></script>
+```
+
+Load the plugin’s stylesheet file
+
+```html
+<link rel="stylesheet" href="path/to/zebra_accordion.css" type="text/css">
+```
+
+Now, within the DOM-ready event do
+
+```javascript
+$(document).ready(function() {
+
+    new $.Zebra_Accordion($('.Zebra_Accordion'));
+
+});
+```
+Configuration options and demos on the **[project's homepage](http://stefangabos.ro/jquery/zebra_accordion/)**
