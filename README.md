@@ -49,4 +49,4 @@ $(document).ready(function() {
 
 });
 ```
-Configuration options and demos on the **[project's homepage](http://stefangabos.ro/jquery/zebra_accordion/)**
+Configuration options and demos on the **[project's homepage](http://stefangabos.ro/jquery/zebra-accordion/)**
