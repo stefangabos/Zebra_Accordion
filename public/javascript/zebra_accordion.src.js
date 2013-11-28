@@ -24,7 +24,7 @@
  *  For more resources visit {@link http://stefangabos.ro/}
  *
  *  @author     Stefan Gabos <contact@stefangabos.ro>
- *  @version    1.2 (last revision: March 24, 2013)
+ *  @version    1.2.1 (last revision: November 28, 2013)
  *  @copyright  (c) 2011 - 2013 Stefan Gabos
  *  @license    http://www.gnu.org/licenses/lgpl-3.0.txt GNU LESSER GENERAL PUBLIC LICENSE
  *  @package    Zebra_Accordion
@@ -97,6 +97,18 @@
                                                                 //  always be FALSE!
                                                                 //
                                                                 //  Default is FALSE;
+
+            onBeforeClose:          null,                       //  Event fired before a content block is collapsed.
+                                                                //
+                                                                //  The callback function (if any) receives as arguments
+                                                                //  the closed item's number (0 based), the title element
+                                                                //  and the content block element.
+                                                                //
+            onBeforeOpen:           null,                       //  Event fired before a content block is expanded.
+                                                                //
+                                                                //  The callback function (if any) receives as arguments
+                                                                //  the closed item's number (0 based), the title element
+                                                                //  and the content block element.
 
             onClose:                null,                       //  Event fired after a content block is collapsed.
                                                                 //
@@ -251,6 +263,12 @@
                     $block = $($blocks[index]), // reference to the content block element
                     block = blocks[index];      // get the block's properties
 
+                // if a callback function needs to be called before expanding the content block
+                if (plugin.settings.onBeforeOpen && typeof plugin.settings.onBeforeOpen == 'function')
+
+                    // execute the callback function
+                    plugin.settings.onBeforeOpen(index, $title, $block);
+
                 // if any block can can be expanded/collapsed at any time
                 // and current block is already expanded, collapse it instead
                 if (plugin.settings.collapsible && $block.height() > 0) return plugin.hide(index, noFx);
@@ -364,6 +382,12 @@
                 var $title = $($titles[index]), //  reference to the title element
                     $block = $($blocks[index]), //  reference to the content block element
                     block = blocks[index];      //  get the block's properties
+
+                // if a callback function needs to be called before collapsing the content block
+                if (plugin.settings.onBeforeClose && typeof plugin.settings.onBeforeClose == 'function')
+
+                    // execute the callback function
+                    plugin.settings.onBeforeClose(index, $title, $block);
 
                 // remove the extra class added to the title element when the associated block was expanded
                 $title.removeClass(plugin.settings.expanded_class);
