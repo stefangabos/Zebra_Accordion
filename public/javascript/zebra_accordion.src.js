@@ -122,7 +122,7 @@
                                                                 //  the opened item's number (0 based), the title element
                                                                 //  and the content block element.
 
-        }
+        };
 
         var
 
@@ -136,7 +136,7 @@
             titles = [],
             blocks = [];
 
-        plugin.settings = {}
+        plugin.settings = {};
 
         /**
          *  Constructor method
@@ -148,11 +148,10 @@
             // the plugin's final properties are the merged default and user-provided options (if any)
             plugin.settings = $.extend({}, defaults, options);
 
-            var $element =  $(el),  // reference to the jQuery version of DOM element the plugin is attached to
-                element =   el;     // reference to the actual DOM element
+            var $element =  $(el);  // reference to the jQuery version of DOM element the plugin is attached to
 
-            $titles = $element.children('dt'),    // references to the title elements
-            $blocks = $element.children('dd');    // references to the content blocks
+            $titles = $('dt', $element);    // references to the title elements
+            $blocks = $('dd', $element);    // references to the content blocks
 
             // iterate through the title elements and get some information about each element
             _get_titles_info();
@@ -236,7 +235,7 @@
 
             });
 
-        }
+        };
 
         /**
          *  Expands a content block.
@@ -257,7 +256,7 @@
         plugin.show = function(index, noFx, noScroll) {
 
             // if "index" is an integer, greater than 0 and lesser than the total number of items
-            if (null != new String(index).match(/^[0-9]+$/) && index >= 0 && index <= blocks.length - 1) {
+            if (null !== new String(index).match(/^[0-9]+$/) && index >= 0 && index <= blocks.length - 1) {
 
                 var $title = $($titles[index]), // reference to the title element
                     $block = $($blocks[index]), // reference to the content block element
@@ -287,7 +286,7 @@
 
                 // add an extra class to the title element, to indicate that the element is expanded
                 // useful for custom styling of the title element, to give a better visual feedback to the users
-                $title.addClass(plugin.settings.expanded_class)
+                $title.addClass(plugin.settings.expanded_class);
 
                 // set the content block's "display" property to "block"
                 $block.css('display', 'block');
@@ -360,7 +359,7 @@
 
             }
 
-        }
+        };
 
         /**
          *  Collapses a content block.
@@ -377,7 +376,7 @@
         plugin.hide = function(index, noFx) {
 
             // if "index" is an integer, greater than 0 and lesser than the total number of items, and the respective block is not already collapsed
-            if (null != new String(index).match(/^[0-9]+$/) && index >= 0 && index <= blocks.length - 1) {
+            if (null !== new String(index).match(/^[0-9]+$/) && index >= 0 && index <= blocks.length - 1) {
 
                 var $title = $($titles[index]), //  reference to the title element
                     $block = $($blocks[index]), //  reference to the content block element
@@ -435,7 +434,7 @@
 
             }
 
-        }
+        };
 
         /**
          *  Gets some CSS properties for the accordion's content blocks
@@ -482,7 +481,7 @@
 
             });
 
-        }
+        };
 
         /**
          *  Gets some CSS properties for the accordion's title blocks
@@ -520,7 +519,7 @@
                 // if we need to handle the required event
                 // (this method may also be called internally upon resizing of the browser window
                 // case in which we don't need to re-attach the function to the required event)
-                if (undefined == nobind)
+                if (undefined === nobind)
 
                     // handle the required event (click or mouseover - see above)
                     $title.bind(event, function() {
@@ -532,7 +531,7 @@
 
             });
 
-        }
+        };
 
         /**
          *  A wrapper to JavaScript's parseInt() function.
@@ -549,11 +548,11 @@
             // if result is not a number (NaN) return 0, or the converted value otherwise
             return isNaN(value) ? 0 : value;
 
-        }
+        };
 
         // fire it up!
         init();
 
-    }
+    };
 
 })(jQuery);
