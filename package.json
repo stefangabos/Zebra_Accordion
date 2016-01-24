@@ -1,0 +1,34 @@
+{
+  "name": "zebra_accordion",
+  "version": "1.2.3",
+  "main": "public/javascript/zebra_accordion.js",
+  "homepage": "https://github.com/stefangabos/Zebra_Accordion",
+  "author": {
+    "name": "Stefan Gabos",
+    "email": "contact@stefangabos.ro"
+  },
+  "description": "A tiny, easily configurable, fully customizable, cross-browser accordion jQuery plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefangabos/Zebra_Accordion.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stefangabos/Zebra_Accordion/issues",
+    "email": "contact@stefangabos.ro"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "accordion",
+    "toggle",
+    "UI"
+  ],
+  "license" : "LGPL-3.0",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-watch": "*"
+  }
+}
