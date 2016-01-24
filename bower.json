@@ -1,0 +1,29 @@
+{
+  "name": "zebra_accordion",
+  "version": "1.2.3",
+  "main": "public/javascript/zebra_accordion.js",
+  "homepage": "https://github.com/stefangabos/Zebra_Accordion",
+  "authors": [
+    "Stefan Gabos <contact@stefangabos.ro>"
+  ],
+  "description": "A tiny, easily configurable, fully customizable, cross-browser accordion jQuery plugin",
+  "keywords": [
+    "accordion",
+    "toggle",
+    "UI",
+    "jquery"
+  ],
+  "dependencies": {
+    "jquery": ">=1.5.2 <2.x"
+  },
+  "license": "LGPL",
+  "ignore": [
+    ".gitattributes",
+    ".gitignore",
+    ".npmignore",
+    "Gruntfile.js",
+    "package.json",
+    "README.md",
+    "bower.json"
+  ]
+}
