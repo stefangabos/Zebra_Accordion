@@ -31,6 +31,8 @@
  */
 ;(function($) {
 
+    'use strict';
+
     $.Zebra_Accordion = function(el, options) {
 
         var defaults = {
@@ -256,7 +258,7 @@
         plugin.show = function(index, noFx, noScroll) {
 
             // if "index" is an integer, greater than 0 and lesser than the total number of items
-            if (null !== new String(index).match(/^[0-9]+$/) && index >= 0 && index <= blocks.length - 1) {
+            if (null !== (index + '').match(/^[0-9]+$/) && index >= 0 && index <= blocks.length - 1) {
 
                 var $title = $($titles[index]), // reference to the title element
                     $block = $($blocks[index]), // reference to the content block element
@@ -376,7 +378,7 @@
         plugin.hide = function(index, noFx) {
 
             // if "index" is an integer, greater than 0 and lesser than the total number of items, and the respective block is not already collapsed
-            if (null !== new String(index).match(/^[0-9]+$/) && index >= 0 && index <= blocks.length - 1) {
+            if (null !== (index + '').match(/^[0-9]+$/) && index >= 0 && index <= blocks.length - 1) {
 
                 var $title = $($titles[index]), //  reference to the title element
                     $block = $($blocks[index]), //  reference to the content block element
