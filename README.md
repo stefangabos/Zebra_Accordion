@@ -21,11 +21,23 @@ Zebra_Accordion is a tiny (3KB minified) accordion jQuery plugin. It transforms 
 
 ##How to use
 
-First, load the latest version of jQuery from a CDN and provide a fallback to a local source, like:
+Zebra_Accordion is available as a [Bower package](http://bower.io/). To install it use:
+
+```
+bower install zebra_accordion
+```
+
+Zebra_Accordion is also available as a [npm package](https://www.npmjs.com/). To install it use:
+
+```
+npm install Zebra_Accordion
+```
+
+Load the latest version of jQuery from a CDN and provide a fallback to a local source, like:
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="public/javascript/jquery.min.js"><\/script>')</script>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script>window.jQuery || document.write('<script src="path/to/jquery-1.12.0.js"><\/script>')</script>
 ```
 
 Load the Zebra_Accordion plugin
