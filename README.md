@@ -30,7 +30,7 @@ bower install zebra_accordion
 Zebra_Accordion is also available as a [npm package](https://www.npmjs.com/). To install it use:
 
 ```
-npm install Zebra_Accordion
+npm install zebra_accordion
 ```
 
 Load the latest version of jQuery from a CDN and provide a fallback to a local source, like:
