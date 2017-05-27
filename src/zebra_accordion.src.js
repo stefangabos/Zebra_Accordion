@@ -24,7 +24,7 @@
  *  For more resources visit {@link http://stefangabos.ro/}
  *
  *  @author     Stefan Gabos <contact@stefangabos.ro>
- *  @version    1.2.4 (last revision: May 27, 2017)
+ *  @version    1.2.4 (last revision: May 28, 2017)
  *  @copyright  (c) 2011 - 2017 Stefan Gabos
  *  @license    http://www.gnu.org/licenses/lgpl-3.0.txt GNU LESSER GENERAL PUBLIC LICENSE
  *  @package    Zebra_Accordion
@@ -199,7 +199,7 @@
                 $titles.each(function(index) {
 
                     // reference to the title element
-                    var $this = $(this);
+                    var $this = titles[index].element;
 
                     // if we find an opened tab, save the tab's index for later
                     if ($this.hasClass(plugin.settings.expanded_class)) open.push(index);
@@ -217,7 +217,7 @@
                 $blocks.each(function(index) {
 
                     // set the content element's "style" attribute back to its original state (before running the plugin)
-                    $(this).attr('style', blocks[index].style);
+                    blocks[index].element.attr('style', blocks[index].style);
 
                 });
 
@@ -257,7 +257,7 @@
         plugin.show = function(index, noFx, noScroll) {
 
             // if "index" is an integer, greater than 0 and lesser than the total number of items
-            if (null !== (index + '').match(/^[0-9]+$/) && index >= 0 && index <= blocks.length - 1) {
+            if (!isNaN(parseFloat(index)) && index >= 0 && index <= blocks.length - 1) {
 
                 var block = blocks[index],          // get the block's properties
                     $title = titles[index].element, // reference to the title element
@@ -387,7 +387,7 @@
         plugin.hide = function(index, noFx) {
 
             // if "index" is an integer, greater than 0 and lesser than the total number of items, and the respective block is not already collapsed
-            if (null !== (index + '').match(/^[0-9]+$/) && index >= 0 && index <= blocks.length - 1) {
+            if (!isNaN(parseFloat(index)) && index >= 0 && index <= blocks.length - 1) {
 
                 var $title = titles[index].element, //  the title element to hide
                     block = blocks[index],          //  get the properties of the content block to hide
@@ -534,9 +534,9 @@
                 // needed to correctly expand/collapse the block
                 // and add them to our lookup array
                 titles.push({
-                    height: $this.outerHeight(),    // the title's height, including margins and padding
-                    style:  $this.attr('style'),    // the element's original style attribute (if any)
-                    element:  $this                 // cache the jQuery object
+                    height:     $this.outerHeight(),    // the title's height, including margins and padding
+                    style:      $this.attr('style'),    // the element's original style attribute (if any)
+                    element:    $this                   // cache the jQuery object
                 });
 
                 // if we need to handle the required event
