@@ -133,6 +133,8 @@
             $titles = null,
             $blocks = null,
 
+            $window = $(window),
+
             titles = [],
             blocks = [];
 
@@ -190,7 +192,7 @@
             }
 
             // run a function whenever the browser's window is resized
-            $(window).on('resize', function() {
+            $window.on('resize', function() {
 
                 // by default, we assume that there's no tab opened
                 var open = [];
@@ -217,7 +219,7 @@
                 $blocks.each(function(index) {
 
                     // set the content element's "style" attribute back to its original state (before running the plugin)
-                    blocks[index].element.attr('style', blocks[index].style);
+                    blocks[index].element.attr('style', blocks[index].style || '');
 
                 });
 
@@ -277,7 +279,7 @@
                 else if (!plugin.settings.collapsible)
 
                     // iterate through the content blocks
-                    titles.each(function(key) {
+                    $titles.each(function(key) {
 
                         // if this is the expanded tab
                         if (titles[key].element.hasClass(plugin.settings.expanded_class)) {
@@ -334,8 +336,8 @@
                                 title_height = titles[index].height,                        //  the title's height
                                 block_height = block.outerHeight,                           //  the content block's height
                                 total_height = title_top + title_height + block_height,     //  item's total height
-                                viewport_height = $(window).height(),                       //  visible area in the browser
-                                viewport_scroll = $(window).scrollTop(),                    //  how much is the page scrolled down (from the top)
+                                viewport_height = $window.height(),                       //  visible area in the browser
+                                viewport_scroll = $window.scrollTop(),                    //  how much is the page scrolled down (from the top)
                                 offset = null;
 
                             // if a content block's bottom goes out of the view
