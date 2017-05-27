@@ -1,0 +1,28 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.syntaxhighlighter {
+    padding: 1em 0;
+}
+
+dl.Zebra_Accordion {
+    width: 100% ;
+}
+
+dl.Zebra_Accordion dt {
+    background: #000;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5px;
+}
+
+dl.Zebra_Accordion dd {
+    background: #EFEFEF;
+    padding: 15px;
+    margin: 1px 0;
+}
+
+dl.Zebra_Accordion dt.Zebra_Accordion_Expanded {
+    background: #C40000;
+}

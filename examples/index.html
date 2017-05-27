@@ -8,15 +8,17 @@
 
         <title>Zebra_Accordion examples</title>
 
-        <link rel="stylesheet" href="public/css/reset.css" type="text/css">
-        <link rel="stylesheet" href="../public/css/zebra_accordion.css" type="text/css">
-        <link rel="stylesheet" href="public/css/style.css" type="text/css">
-        <link type="text/css" rel="stylesheet" href="libraries/syntaxhighlighter/public/css/shCoreDefault.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCoreDefault.css" />
 
-        <script type="text/javascript" src="libraries/syntaxhighlighter/public/javascript/shCore.js"></script>
-        <script type="text/javascript" src="libraries/syntaxhighlighter/public/javascript/shBrushJScript.js"></script>
-        <script type="text/javascript" src="libraries/syntaxhighlighter/public/javascript/shBrushXml.js"></script>
-        <script type="text/javascript" src="libraries/syntaxhighlighter/public/javascript/shBrushCSS.js"></script>
+        <link rel="stylesheet" href="examples.css" type="text/css">
+        <link rel="stylesheet" href="../dist/zebra_accordion.min.css" type="text/css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
 
         <script type="text/javascript">
             SyntaxHighlighter.defaults['toolbar'] = false;
@@ -27,146 +29,162 @@
 
     <body>
 
-        <div class="main-wrapper">
+        <div class="container">
 
-            <h3>Zebra_Accordion Demos</h3>
+            <div class="row">
 
-            <p><strong>The HTML:</strong></p>
+                <div class="col-xs-12">
 
-            <pre class="brush:xml">
-                &lt;!doctype html&gt;
-                &lt;html&gt;
-                    &lt;head&gt;
-                        &lt;meta charset="utf-8"&gt;
-                        &lt;title&gt;Zebra_Accordion Demo&lt;/title&gt;
-                        &lt;link rel="stylesheet" href="path/to/zebra_accordion.css" type="text/css"&gt;
-                        &lt;script type="text/javascript" src="path/to/jquery-1.6.2.js"&gt;&lt;/script&gt;
-                        &lt;script type="text/javascript" src="path/to/zebra_accordion.js"&gt;&lt;/script&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                        &lt;dl class="Zebra_Accordion"&gt;
-                            &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
-                            &lt;dd&gt;
-                                Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                                Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                                Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                            &lt;/dd&gt;
-                            &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
-                            &lt;dd&gt;
-                                Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                                Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                                Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                            &lt;/dd&gt;
-                            &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
-                            &lt;dd&gt;
-                                Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                                Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                                Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                            &lt;/dd&gt;
-                            &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
-                            &lt;dd&gt;
-                                Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                                Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                                Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                            &lt;/dd&gt;
-                        &lt;/dl&gt;
-                    &lt;/body&gt;
-                &lt;/html&gt;
-            </pre>
+                    <div class="page-header">
+                        <h1>Zebra_Accordion Demos</h1>
+                    </div>
 
-            <p><strong>The CSS:</strong></p>
+                    <h2><strong>Setup</strong></h2>
 
-            <pre class="brush:css">
-            dl.Zebra_Accordion { width: 400px; font-family: Arial, sans-serif; font-size: 12px }
-            dl.Zebra_Accordion dt { background: #000; color: #FFF; font-weight: bold; padding: 5px }
-            dl.Zebra_Accordion dd { background: #EFEFEF; padding: 15px; margin: 1px 0 }
+                    <h5><strong>HTML</strong></h5>
 
-            dl.Zebra_Accordion dt.Zebra_Accordion_Expanded { background: #C40000 }
-            </pre>
+                    <pre class="brush:xml">
+                        &lt;!doctype html&gt;
+                        &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;meta charset="utf-8"&gt;
+                                &lt;title&gt;Zebra_Accordion Demo&lt;/title&gt;
+                                &lt;link rel="stylesheet" href="path/to/zebra_accordion.min.css" type="text/css"&gt;
+                                &lt;script type="text/javascript" src="path/to/jquery.js"&gt;&lt;/script&gt;
+                                &lt;script type="text/javascript" src="path/to/zebra_accordion.min.js"&gt;&lt;/script&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;dl class="Zebra_Accordion"&gt;
+                                    &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
+                                    &lt;dd&gt;
+                                        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                                        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                                        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                                    &lt;/dd&gt;
+                                    &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
+                                    &lt;dd&gt;
+                                        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                                        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                                        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                                    &lt;/dd&gt;
+                                    &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
+                                    &lt;dd&gt;
+                                        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                                        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                                        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                                    &lt;/dd&gt;
+                                    &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
+                                    &lt;dd&gt;
+                                        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                                        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                                        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                                    &lt;/dd&gt;
+                                &lt;/dl&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+                    </pre>
 
-            <p><strong>1.</strong> Basic usage</p>
+                    <h5><strong>CSS</strong></h5>
 
-            <pre class="brush:js">
-            $(document).ready(function() {
-                var myAccordion = new $.Zebra_Accordion('.Zebra_Accordion');
-            });
-            </pre>
+                    <pre class="brush:css">
+                    dl.Zebra_Accordion { width: 100% }
+                    dl.Zebra_Accordion dt { background: #000; color: #FFF; font-weight: bold; padding: 5px }
+                    dl.Zebra_Accordion dd { background: #EFEFEF; padding: 15px; margin: 1px 0 }
 
-            <p>Result</p>
+                    dl.Zebra_Accordion dt.Zebra_Accordion_Expanded { background: #C40000 }
+                    </pre>
 
-            <dl class="Zebra_Accordion" id="Zebra_Accordion1">
-                <dt>Lorem ipsum dolor sit amet consectetuer</dt>
-                <dd>
-                    Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                    Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                    Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                </dd>
-                <dt>Lorem ipsum dolor sit amet consectetuer</dt>
-                <dd>
-                    Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                    Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                    Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                </dd>
-                <dt>Lorem ipsum dolor sit amet consectetuer</dt>
-                <dd>
-                    Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                    Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                    Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                </dd>
-                <dt>Lorem ipsum dolor sit amet consectetuer</dt>
-                <dd>
-                    Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                    Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                    Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                </dd>
-            </dl>
+                    <hr>
 
-            <p><strong>2.</strong> All tabs can be expanded/collapsed</p>
+                    <h2><strong>Basic usage</strong></h2>
 
-            <pre class="brush:js">
-            $(document).ready(function() {
-                var myAccordion = new $.Zebra_Accordion('.Zebra_Accordion', {
-                    'collapsible':  true
-                });
-            });
-            </pre>
+                    <pre class="brush:js">
+                    $(document).ready(function() {
+                        var myAccordion = new $.Zebra_Accordion('.Zebra_Accordion');
+                    });
+                    </pre>
 
-            <p>Result</p>
+                    <h5><strong>Result</strong></h5><br>
 
-            <dl class="Zebra_Accordion" id="Zebra_Accordion2">
-                <dt>Lorem ipsum dolor sit amet consectetuer</dt>
-                <dd>
-                    Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                    Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                    Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                </dd>
-                <dt>Lorem ipsum dolor sit amet consectetuer</dt>
-                <dd>
-                    Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                    Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                    Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                </dd>
-                <dt>Lorem ipsum dolor sit amet consectetuer</dt>
-                <dd>
-                    Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                    Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                    Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                </dd>
-                <dt>Lorem ipsum dolor sit amet consectetuer</dt>
-                <dd>
-                    Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                    Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                    Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                </dd>
-            </dl>
+                    <dl class="Zebra_Accordion" id="Zebra_Accordion1">
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                    </dl>
 
-            <br><br><br>
+                    <hr>
+
+                    <h2><strong>Collapsing/expanding ALL tabs</strong></h2>
+
+                    <pre class="brush:js">
+                    $(document).ready(function() {
+                        var myAccordion = new $.Zebra_Accordion('.Zebra_Accordion', {
+                            collapsible: true
+                        });
+                    });
+                    </pre>
+
+                    <h5><strong>Result</strong></h5><br>
+
+                    <dl class="Zebra_Accordion" id="Zebra_Accordion2">
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                    </dl>
+
+                    <br><br><br><br><br><br>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <script type="text/javascript" src="public/javascript/jquery-1.12.0.js"></script>
-        <script type="text/javascript" src="../public/javascript/zebra_accordion.js"></script>
-        <script type="text/javascript" src="public/javascript/main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../dist/zebra_accordion.min.js"></script>
+        <script type="text/javascript" src="examples.js"></script>
 
     </body>
 
