@@ -1,7 +1,7 @@
 /**
  *  Zebra_Accordion
  *
- *  A tiny (3KB minified) accordion plugin for jQuery.
+ *  A tiny (3KB minified, ~1.3KB gzipped) accordion plugin for jQuery.
  *
  *  It transforms a basic definition list, without requiring any other specific markup, into a small-footprint, easily
  *  configurable, fully customizable, cross-browser accordion widget, useful for better organizing larger groups of content.
@@ -9,22 +9,21 @@
  *  Features:
  *
  *  -   no additional markup required other than a basic definition list;
- *  -   easily customizable through CSS;
- *  -   works with both fixed and fluid (responsive) layouts;
- *  -   can be configured to work so that only a single can be expanded at a time, or so that all tabs may be
- *      expanded/collapsed;
- *  -   can be configured to work so tabs expand on mouse over;
- *  -   when, after expanding a tab, part of its content is outside the viewport, it automatically scrolls the browser's
- *      window so that the tab's content is visible;
+ *  -   no default style allowing you to fully customize it to suit your needs;
+ *  -   works with responsive layouts;
+ *  -   allows for a single expanded tab at a time, or for any number of tabs to be expanded/collapsed;
+ *  -   allows for tabs to expand on mouse over, not just on click
+ *  -   if an expanded tab's content is not in the viewport it automatically scrolls the browser window so that the
+ *      content is visible;
  *  -   callback functions can be used for further customization;
- *  -   works in all major browsers (Firefox, Opera, Safari, Chrome, Internet Explorer 6, 7, 8, 9)
+ *  -   works in all major browsers (Firefox, Opera, Safari, Chrome, Internet Explorer 6+)
  *
  *  Visit {@link http://stefangabos.ro/jquery/zebra-accordion/} for more information.
  *
  *  For more resources visit {@link http://stefangabos.ro/}
  *
  *  @author     Stefan Gabos <contact@stefangabos.ro>
- *  @version    1.2.4 (last revision: May 28, 2017)
+ *  @version    1.2.4 (last revision: May 29, 2017)
  *  @copyright  (c) 2011 - 2017 Stefan Gabos
  *  @license    http://www.gnu.org/licenses/lgpl-3.0.txt GNU LESSER GENERAL PUBLIC LICENSE
  *  @package    Zebra_Accordion
