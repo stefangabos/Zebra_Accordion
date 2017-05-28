@@ -18,12 +18,10 @@
  *  -   callback functions can be used for further customization;
  *  -   works in all major browsers (Firefox, Opera, Safari, Chrome, Internet Explorer 6+)
  *
- *  Visit {@link http://stefangabos.ro/jquery/zebra-accordion/} for more information.
- *
- *  For more resources visit {@link http://stefangabos.ro/}
+ *  Read more {@link https://github.com/stefangabos/Zebra_Accordion/ here}
  *
  *  @author     Stefan Gabos <contact@stefangabos.ro>
- *  @version    1.2.4 (last revision: May 29, 2017)
+ *  @version    1.2.5 (last revision: May 29, 2017)
  *  @copyright  (c) 2011 - 2017 Stefan Gabos
  *  @license    http://www.gnu.org/licenses/lgpl-3.0.txt GNU LESSER GENERAL PUBLIC LICENSE
  *  @package    Zebra_Accordion
@@ -36,7 +34,7 @@
 
         var defaults = {
 
-                animate_opacity:        true,                       //  Should the content block's opacity be also animated?
+                animate_opacity:        true,                       //  Should a tab's opacity be also animated?
                                                                     //
                                                                     //  Default is TRUE
 
@@ -49,8 +47,7 @@
                                                                     //  Default is FALSE
 
                 expanded_class:         'Zebra_Accordion_Expanded', //  The name of the class to append to the "title"
-                                                                    //  element when its associated content block is
-                                                                    //  expanded.
+                                                                    //  element when its associated tab is expanded.
                                                                     //
                                                                     //  Can be used for customizing the aspect of the opened
                                                                     //  tab to give better visual feedback to the users.
@@ -58,14 +55,14 @@
                                                                     //  Default is "Zebra_Accordion_Expanded"
 
                 hide_speed:             400,                        //  The speed (in milliseconds) to use when collapsing
-                                                                    //  content blocks.
+                                                                    //  tabs.
                                                                     //
                                                                     //  Default is 400
 
-                scroll_speed:           600,                        //  If a content block's content is not entirely visible
-                                                                    //  after it is expanded, the window will be scrolled so
-                                                                    //  so that the entire content of the content block is
-                                                                    //  visible (if it is possible).
+                scroll_speed:           600,                        //  If a tab's content is not entirely visible after
+                                                                    //  it is expanded, the window will be scrolled so
+                                                                    //  that the entire content of the tab is visible
+                                                                    //  (if it is possible).
                                                                     //
                                                                     //  This value represents the speed (in milliseconds) to
                                                                     //  use for scrolling.
@@ -73,12 +70,12 @@
                                                                     //  Default is 600
 
                 show_speed:             400,                        //  The speed (in milliseconds) to use when expanding
-                                                                    //  content blocks.
+                                                                    //  tabs.
                                                                     //
                                                                     //  Default is 400
 
-                show:                   0,                          //  The index (0 based) of the content block to be
-                                                                    //  expanded by default.
+                show:                   0,                          //  The index (0 based) of the tab to be expanded by
+                                                                    //  default.
                                                                     //
                                                                     //  The value of this property can also be boolean FALSE,
                                                                     //  indicating that all tabs should be collapsed by default.
@@ -91,37 +88,37 @@
                                                                     //
                                                                     //  Default is 0
 
-                toggle_on_mouseover:    false,                      //  Set this to TRUE if content blocks should be expanded
-                                                                    //  when hovering their associated "titles".
+                toggle_on_mouseover:    false,                      //  Set this to TRUE if tabs should expanded when
+                                                                    //  hovering their associated "titles".
                                                                     //
                                                                     //  If "collapsible" is TRUE then this property will
-                                                                    //  always be FALSE!
+                                                                    //  always be considered FALSE!
                                                                     //
                                                                     //  Default is FALSE;
 
-                onBeforeClose:          null,                       //  Event fired before a content block is collapsed.
+                onBeforeClose:          null,                       //  Event fired before a tab is collapsed.
                                                                     //
-                                                                    //  The callback function (if any) receives as arguments
-                                                                    //  the closed item's number (0 based), the title element
-                                                                    //  and the content block element.
+                                                                    //  The callback function takes as arguments the tab's
+                                                                    //  number (0 based), the title element and the tab
+                                                                    //  element.
                                                                     //
-                onBeforeOpen:           null,                       //  Event fired before a content block is expanded.
+                onBeforeOpen:           null,                       //  Event fired before a tab is expanded.
                                                                     //
-                                                                    //  The callback function (if any) receives as arguments
-                                                                    //  the closed item's number (0 based), the title element
-                                                                    //  and the content block element.
+                                                                    //  The callback function takes as arguments the tab's
+                                                                    //  number (0 based), the title element and the tab
+                                                                    //  element.
 
-                onClose:                null,                       //  Event fired after a content block is collapsed.
+                onClose:                null,                       //  Event fired after a tab is collapsed.
                                                                     //
-                                                                    //  The callback function (if any) receives as arguments
-                                                                    //  the closed item's number (0 based), the title element
-                                                                    //  and the content block element.
+                                                                    //  The callback function takes as arguments the tab's
+                                                                    //  number (0 based), the title element and the tab
+                                                                    //  element.
 
-                onOpen:                 null                        //  Event fired after a content block is expanded.
+                onOpen:                 null                        //  Event fired after a tab is expanded.
                                                                     //
-                                                                    //  The callback function (if any) receives as arguments
-                                                                    //  the opened item's number (0 based), the title element
-                                                                    //  and the content block element.
+                                                                    //  The callback function takes as arguments the tab's
+                                                                    //  number (0 based), the title element and the tab
+                                                                    //  element.
 
             },
 
@@ -153,42 +150,40 @@
                 i;
 
             $titles = $('dt', $element);    // references to the title elements
-            $blocks = $('dd', $element);    // references to the content blocks
+            $blocks = $('dd', $element);    // references to the tabs
 
             // iterate through the title elements and get some information about each element
             _get_titles_info();
 
-            // iterate through the content block elements and get some information about each element
+            // iterate through the tab elements and get some information about each tab
             _get_blocks_info();
 
-            // if a content block is to be shown by default
-            if (plugin.settings.show !== false) {
+            // if a tab is to be shown by default
+            if (plugin.settings.show !== false)
 
-                // if any number of content blocks can be expanded/collapsed, and by default we have to expand a certain
-                // set of content blocks, or all
+                // if any number of tabs can be expanded/collapsed, and by default we have to expand a certain
+                // set of tabs, or all
                 if (plugin.settings.collapsible && ($.isArray(plugin.settings.show) || plugin.settings.show === true)) {
 
-                    // if we have to expand all content blocks
+                    // if we have to expand all tabs
                     if (plugin.settings.show === true)
 
-                        // expand all content blocks
+                        // expand all tabs
                         for (i = 0; i < $titles.length; i++) plugin.show(i, true, true);
 
-                    // if we only have to expand certain content blocks
+                    // if we only have to expand certain tabs
                     else
 
-                        // iterate through the content blocks that need to be expanded
+                        // iterate through the tabs that need to be expanded
                         $.each(plugin.settings.show, function(index) {
 
-                            // expand each content block
+                            // expand each tab
                             plugin.show(plugin.settings.show[index], true, true);
 
                         });
 
-                // otherwise, show the default content block
+                // otherwise, show the default tab
                 } else plugin.show(plugin.settings.show, true, true);
-
-            }
 
             // run a function whenever the browser's window is resized
             $window.on('resize', function() {
@@ -214,7 +209,7 @@
                 // also, make sure we don't re-bind callback functions to events
                 _get_titles_info(false);
 
-                // iterate through the content block elements
+                // iterate through the tab elements
                 $blocks.each(function(index) {
 
                     // set the content element's "style" attribute back to its original state (before running the plugin)
@@ -240,17 +235,16 @@
         };
 
         /**
-         *  Expands a content block.
+         *  Expands a tab.
          *
-         *  @param  integer index       The 0-based index of the content block to expand.
+         *  @param  integer index       The 0-based index of the tab to expand.
          *
-         *  @param  boolean noFx        (Optional) If set to TRUE, the content block will be instantly expanded without
-         *                              animation.
+         *  @param  boolean noFx        (Optional) If set to TRUE, the tab will be instantly expanded without animation.
          *
          *                              Default is FALSE.
          *
          *  @param  boolean noScroll    (Optional) If set to TRUE, the browser window will not be scrolled to the newly
-         *                              expanded content block.
+         *                              expanded tab.
          *
          *                              Default is FALSE.
          *  @return void
@@ -262,9 +256,9 @@
 
                 var block = blocks[index],          // get the block's properties
                     $title = titles[index].element, // reference to the title element
-                    $block = block.element;         // reference to the content block element
+                    $block = block.element;         // reference to the tab element
 
-                // if a callback function needs to be called before expanding the content block
+                // if a callback function needs to be called before expanding the tab
                 if (plugin.settings.onBeforeOpen && typeof plugin.settings.onBeforeOpen === 'function')
 
                     // execute the callback function
@@ -277,7 +271,7 @@
                 // if only a single block can be expanded at a time
                 else if (!plugin.settings.collapsible)
 
-                    // iterate through the content blocks
+                    // iterate through the tabs
                     $titles.each(function(key) {
 
                         // if this is the expanded tab
@@ -303,10 +297,10 @@
                     // set the "display" property to "block"
                     .css('display', 'block')
 
-                    // stop any ongoing animation on the current content block
+                    // stop any ongoing animation on the current tab
                     .stop()
 
-                    // expand the indicated content block
+                    // expand the indicated tab
                     .animate({
 
                         height:         block.boxSizing === 'border-box' ? block.outerHeight : block.height,
@@ -322,7 +316,7 @@
                     // once the animation is complete
                     function() {
 
-                        // if a callback function needs to be called after opening the content block
+                        // if a callback function needs to be called after opening the tab
                         if (plugin.settings.onOpen && typeof plugin.settings.onOpen === 'function')
 
                             // execute the callback function
@@ -331,15 +325,15 @@
                         // if scrolling is not explicitly disabled
                         if (!noScroll) {
 
-                            var title_top = Math.round($title.offset().top),                //  the title's "top" position
-                                title_height = titles[index].height,                        //  the title's height
-                                block_height = block.outerHeight,                           //  the content block's height
-                                total_height = title_top + title_height + block_height,     //  item's total height
-                                viewport_height = $window.height(),                       //  visible area in the browser
-                                viewport_scroll = $window.scrollTop(),                    //  how much is the page scrolled down (from the top)
+                            var title_top = Math.round($title.offset().top),            //  the title's "top" position
+                                title_height = titles[index].height,                    //  the title's height
+                                block_height = block.outerHeight,                       //  the tab's height
+                                total_height = title_top + title_height + block_height, //  item's total height
+                                viewport_height = $window.height(),                     //  visible area in the browser
+                                viewport_scroll = $window.scrollTop(),                  //  how much is the page scrolled down (from the top)
                                 offset = null;
 
-                            // if a content block's bottom goes out of the view
+                            // if a tab's bottom goes out of the view
                             if (total_height > viewport_height + viewport_scroll) {
 
                                 // this is how much the page needs to be scrolled down (from the top) so that the content is visible
@@ -374,12 +368,11 @@
         };
 
         /**
-         *  Collapses a content block.
+         *  Collapses a tab.
          *
-         *  @param  integer index   The 0-based index of the content block to collapse.
+         *  @param  integer index   The 0-based index of the tab to collapse.
          *
-         *  @param  boolean noFx    (Optional) If set to TRUE, the content block will be instantly collapsed without
-         *                          animation.
+         *  @param  boolean noFx    (Optional) If set to TRUE, the tab will be instantly collapsed without animation.
          *
          *                          Default is FALSE.
          *
@@ -391,10 +384,10 @@
             if (!isNaN(parseFloat(index)) && index >= 0 && index <= blocks.length - 1) {
 
                 var $title = titles[index].element, //  the title element to hide
-                    block = blocks[index],          //  get the properties of the content block to hide
-                    $block = block.element;         //  the content block element to hide
+                    block = blocks[index],          //  get the properties of the tab to hide
+                    $block = block.element;         //  the tab element to hide
 
-                // if a callback function needs to be called before collapsing the content block
+                // if a callback function needs to be called before collapsing the tab
                 if (plugin.settings.onBeforeClose && typeof plugin.settings.onBeforeClose === 'function')
 
                     // execute the callback function
@@ -403,7 +396,7 @@
                 // remove the extra class added when the block was expanded
                 $title.removeClass(plugin.settings.expanded_class);
 
-                // for the content block to hide
+                // for the tab to hide
                 $block
 
                     // stop any ongoing animation
@@ -431,13 +424,13 @@
                         // and once the animation is complete
                         function() {
 
-                            // if a callback function needs to be called after closing the content block
+                            // if a callback function needs to be called after closing the tab
                             if (plugin.settings.onClose && typeof plugin.settings.onClose === 'function')
 
                                 // execute the callback function
                                 plugin.settings.onClose(index, $title, $block);
 
-                            // set some of content block element's CSS properties
+                            // set some of tab element's CSS properties
                             $block.css({
                                 display:            'none',
                                 visibility:         'visible',
@@ -452,7 +445,7 @@
         };
 
         /**
-         *  Gets some CSS properties for the accordion's content blocks
+         *  Gets some CSS properties for the accordion's tabs
          *
          *  @return void
          *
@@ -463,7 +456,7 @@
             // reset the lookup array
             blocks = [];
 
-            // iterate through the content blocks
+            // iterate through the tabs
             $blocks.each(function(index) {
 
                 var
@@ -476,7 +469,7 @@
                         style:  $this.attr('style')
                     };
 
-                // temporary make set content block's "display" property to "block",
+                // temporary make set tab's "display" property to "block",
                 // in order to be able to get some of the element's CSS properties
                 $this.css({
                     visibility: 'hidden',
@@ -526,7 +519,7 @@
                     // reference to the jQuery object
                     $this = $(this),
 
-                    // the event that should trigger content blocks expansion/collapse
+                    // the event that should trigger tabs' expansion/collapse
                     event = !plugin.settings.collapsible && plugin.settings.toggle_on_mouseover ?
                                 'mouseover' :
                                 'click';
@@ -548,7 +541,7 @@
                     // handle the required event (click or mouseover - see above)
                     $this.on(event, function() {
 
-                        // show the associated content block
+                        // show the associated tab
                         plugin.show(index);
 
                     });
