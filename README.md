@@ -274,4 +274,4 @@ myAccordion.hide(0);
 
 ## Demo
 
-See the [demos](http://stefangabos.github.io/Zebra_Pin/)
+See the [demos](http://stefangabos.github.io/Zebra_Accordion/)
