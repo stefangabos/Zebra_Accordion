@@ -17,6 +17,7 @@
   },
   "license": "LGPL",
   "ignore": [
+    "examples/README.md",
     ".gitattributes",
     ".gitignore",
     ".npmignore",
