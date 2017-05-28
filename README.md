@@ -88,6 +88,8 @@ Load the style sheet file from a local source
 
 You need a basic definition list for your HTML markup
 
+> Don't forget to add the `Zebra_Accordion` class to the list container! If you haven't had a look, all it does is to set `display:hidden` the all the tabs and add `cursor:pointer` to titles, so it will not add too much to your CSS.
+
 ```html
 <dl class="Zebra_Accordion">
     <dt>Lorem ipsum dolor sit amet consectetuer</dt>
