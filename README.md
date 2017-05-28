@@ -44,7 +44,7 @@ bower install zebra_accordion
 
 ## How to use
 
-First, load the latest version of jQuery from a CDN and provide a fallback to a local source, like:
+First, load jQuery from a CDN and provide a fallback to a local source like:
 
 ```html
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -58,20 +58,32 @@ Load the Zebra_Accordion jQuery plugin:
 ```
 
 Alternatively, you can load Zebra_Accordion from [JSDelivr CDN](https://www.jsdelivr.com/) like this:
-```javascript
-// for the most recent version
+```html
+<!-- for the most recent version -->
 <script src="https://cdn.jsdelivr.net/gh/stefangabos/Zebra_Accordion/dist/zebra_accordion.min.js"></script>
 
-// for a specific version
+<!-- for a specific version -->
 <script src="https://cdn.jsdelivr.net/gh/stefangabos/Zebra_Accordion@1.2.5/dist/zebra_accordion.min.js"></script>
 
-// replacing "min" with "src" will serve you the non-compressed version
+<!-- replacing "min" with "src" will serve you the non-compressed version -->
 ```
 
-Load the style sheet file
+Load the style sheet file from a local source
 
 ```html
-<link rel="stylesheet" href="path/to/zebra_accordion.min.css" type="text/css">
+<link rel="stylesheet" href="path/to/zebra_accordion.min.css">
+```
+
+...or from [JSDelivr CDN](https://www.jsdelivr.com/)
+
+```html
+<!-- for the most recent version -->
+<link rel="stylesheet" href=="https://cdn.jsdelivr.net/gh/stefangabos/Zebra_Accordion/dist/zebra_accordion.min.css">
+
+<!-- for a specific version -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stefangabos/Zebra_Accordion@1.2.5/dist/zebra_accordion.css.js">
+
+<!-- replacing "min" with "src" will serve you the non-compressed version -->
 ```
 
 You need a basic definition list for your HTML markup
