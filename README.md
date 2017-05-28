@@ -74,13 +74,42 @@ Load the style sheet file
 <link rel="stylesheet" href="path/to/zebra_accordion.min.css" type="text/css">
 ```
 
+You need a basic definition list for your HTML markup
+
+```html
+<dl class="Zebra_Accordion">
+    <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+    <dd>
+        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+    </dd>
+    <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+    <dd>
+        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+    </dd>
+    <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+    <dd>
+        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+    </dd>
+    <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+    <dd>
+        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+    </dd>
+</dl>
+```
+
 Now, within the DOM-ready event do
 
 ```javascript
 $(document).ready(function() {
-
     new $.Zebra_Accordion($('.Zebra_Accordion'));
-
 });
 ```
 ## Configuration options
