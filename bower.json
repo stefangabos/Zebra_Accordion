@@ -13,7 +13,7 @@
     "jquery"
   ],
   "dependencies": {
-    "jquery": ">=1.5.2"
+    "jquery": ">=1.7.0"
   },
   "license": "LGPL",
   "ignore": [
