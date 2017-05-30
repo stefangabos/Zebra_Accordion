@@ -1,4 +1,4 @@
-## version 1.2.6 (May 30, 2017)
+## version 1.2.7 (May 30, 2017)
 
 - performance improvements and source code tweaks
 - new folder structure
