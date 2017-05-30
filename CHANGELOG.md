@@ -1,4 +1,4 @@
-## version 1.2.5 (May 28, 2017)
+## version 1.2.6 (May 30, 2017)
 
 - performance improvements and source code tweaks
 - new folder structure
@@ -12,7 +12,6 @@
 - updated jQuery to version 1.12.0 in the example file
 
 ## version 1.2.2 (November 28, 2013)
-
 
 - added 2 new events - onBeforeClose and onBeforeOpen; thanks to **paul** for suggesting this a while ago
 - minor updates to keep [JSHint](jshint.com) happy
