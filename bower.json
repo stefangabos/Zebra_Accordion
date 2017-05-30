@@ -21,6 +21,7 @@
     "src/*",
     ".gitattributes",
     ".gitignore",
+    ".npmignore",
     "bower.json",
     "eslint.json",
     "Gruntfile.js",
