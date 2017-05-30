@@ -18,9 +18,9 @@
   "license": "LGPL",
   "ignore": [
     "examples/README.md",
+    "src/*",
     ".gitattributes",
     ".gitignore",
-    ".npmignore",
     "bower.json",
     "eslint.json",
     "Gruntfile.js",
