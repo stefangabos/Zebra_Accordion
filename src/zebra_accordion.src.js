@@ -132,107 +132,228 @@
             $window = $(window),
 
             titles = [],
-            blocks = [];
+            blocks = [],
 
-        plugin.settings = {};
+            /**
+             *  Constructor method
+             *
+             *  @return object  Returns a reference to the plugin
+             */
+            init = function() {
 
-        /**
-         *  Constructor method
-         *
-         *  @return object  Returns a reference to the plugin
-         */
-        var init = function() {
+                // the plugin's final properties are the merged default and user-provided options (if any)
+                plugin.settings = $.extend({}, defaults, options);
 
-            // the plugin's final properties are the merged default and user-provided options (if any)
-            plugin.settings = $.extend({}, defaults, options);
+                var $element = $(el), // reference to the jQuery version of DOM element the plugin is attached to
+                    i;
 
-            var $element = $(el), // reference to the jQuery version of DOM element the plugin is attached to
-                i;
-
-            $titles = $('dt', $element);    // references to the title elements
-            $blocks = $('dd', $element);    // references to the tabs
-
-            // iterate through the title elements and get some information about each element
-            _get_titles_info();
-
-            // iterate through the tab elements and get some information about each tab
-            _get_blocks_info();
-
-            // if a tab is to be shown by default
-            if (plugin.settings.show !== false)
-
-                // if any number of tabs can be expanded/collapsed, and by default we have to expand a certain
-                // set of tabs, or all
-                if (plugin.settings.collapsible && ($.isArray(plugin.settings.show) || plugin.settings.show === true)) {
-
-                    // if we have to expand all tabs
-                    if (plugin.settings.show === true)
-
-                        // expand all tabs
-                        for (i = 0; i < $titles.length; i++) plugin.show(i, true, true);
-
-                    // if we only have to expand certain tabs
-                    else
-
-                        // iterate through the tabs that need to be expanded
-                        $.each(plugin.settings.show, function(index) {
-
-                            // expand each tab
-                            plugin.show(plugin.settings.show[index], true, true);
-
-                        });
-
-                // otherwise, show the default tab
-                } else plugin.show(plugin.settings.show, true, true);
-
-            // run a function whenever the browser's window is resized
-            $window.on('resize', function() {
-
-                // by default, we assume that there's no tab opened
-                var open = [];
-
-                // iterate through the title elements
-                $titles.each(function(index) {
-
-                    // reference to the title element
-                    var $this = titles[index].element;
-
-                    // if we find an opened tab, save the tab's index for later
-                    if ($this.hasClass(plugin.settings.expanded_class)) open.push(index);
-
-                    // set the title element's "style" attribute back to its original state (before running the plugin)
-                    $this.attr('style', titles[index].style);
-
-                });
+                $titles = $('dt', $element);    // references to the title elements
+                $blocks = $('dd', $element);    // references to the tabs
 
                 // iterate through the title elements and get some information about each element
-                // also, make sure we don't re-bind callback functions to events
-                _get_titles_info(false);
+                _get_titles_info();
 
-                // iterate through the tab elements
-                $blocks.each(function(index) {
-
-                    // set the content element's "style" attribute back to its original state (before running the plugin)
-                    blocks[index].element.attr('style', blocks[index].style || '');
-
-                });
-
-                // iterate through the content elements and get some information about each element
+                // iterate through the tab elements and get some information about each tab
                 _get_blocks_info();
 
-                // if there were open tabs
-                if (open.length > 0)
+                // if a tab is to be shown by default
+                if (plugin.settings.show !== false)
 
-                    // re-open them now
-                    $.each(open, function(index) {
+                    // if any number of tabs can be expanded/collapsed, and by default we have to expand a certain
+                    // set of tabs, or all
+                    if (plugin.settings.collapsible && ($.isArray(plugin.settings.show) || plugin.settings.show === true)) {
 
-                        plugin.show(open[index], true, true);
+                        // if we have to expand all tabs
+                        if (plugin.settings.show === true)
+
+                            // expand all tabs
+                            for (i = 0; i < $titles.length; i++) plugin.show(i, true, true);
+
+                        // if we only have to expand certain tabs
+                        else
+
+                            // iterate through the tabs that need to be expanded
+                            $.each(plugin.settings.show, function(index) {
+
+                                // expand each tab
+                                plugin.show(plugin.settings.show[index], true, true);
+
+                            });
+
+                    // otherwise, show the default tab
+                    } else plugin.show(plugin.settings.show, true, true);
+
+                // run a function whenever the browser's window is resized
+                $window.on('resize', function() {
+
+                    // by default, we assume that there's no tab opened
+                    var open = [];
+
+                    // iterate through the title elements
+                    $titles.each(function(index) {
+
+                        // reference to the title element
+                        var $this = titles[index].element;
+
+                        // if we find an opened tab, save the tab's index for later
+                        if ($this.hasClass(plugin.settings.expanded_class)) open.push(index);
+
+                        // set the title element's "style" attribute back to its original state (before running the plugin)
+                        $this.attr('style', titles[index].style);
 
                     });
 
-            });
+                    // iterate through the title elements and get some information about each element
+                    // also, make sure we don't re-bind callback functions to events
+                    _get_titles_info(false);
 
-        };
+                    // iterate through the tab elements
+                    $blocks.each(function(index) {
+
+                        // set the content element's "style" attribute back to its original state (before running the plugin)
+                        blocks[index].element.attr('style', blocks[index].style || '');
+
+                    });
+
+                    // iterate through the content elements and get some information about each element
+                    _get_blocks_info();
+
+                    // if there were open tabs
+                    if (open.length > 0)
+
+                        // re-open them now
+                        $.each(open, function(index) {
+
+                            plugin.show(open[index], true, true);
+
+                        });
+
+                });
+
+            },
+
+            /**
+             *  Gets some CSS properties for the accordion's tabs
+             *
+             *  @return void
+             *
+             *  @access private
+             */
+            _get_blocks_info = function() {
+
+                // reset the lookup array
+                blocks = [];
+
+                // iterate through the tabs
+                $blocks.each(function(index) {
+
+                    var
+
+                        // reference to the jQuery object
+                        $this = $(this),
+
+                        // save element's original style (if any)
+                        original_style = {
+                            style:  $this.attr('style')
+                        };
+
+                    // temporary make set tab's "display" property to "block",
+                    // in order to be able to get some of the element's CSS properties
+                    $this.css({
+                        visibility: 'hidden',
+                        display:    'block'
+                    });
+
+                    // get some of the element's CSS properties
+                    // needed to correctly expand/collapse the block
+                    // and add them to our lookup array
+                    blocks.push($.extend(original_style, {
+                        height:             $this.height(),
+                        outerHeight:        $this.outerHeight(),
+                        paddingTop:         _int($this.css('paddingTop')),
+                        paddingBottom:      _int($this.css('paddingBottom')),
+                        marginTop:          _int($this.css('marginTop')),
+                        marginBottom:       _int($this.css('marginBottom')),
+                        borderTopWidth:     _int($this.css('borderTopWidth')),
+                        borderBottomWidth:  _int($this.css('borderBottomWidth')),
+                        boxSizing:          $this.css('boxSizing'),
+                        element:            $this
+                    }));
+
+                    // all blocks are collapsed by default
+                    plugin.hide(index, true);
+
+                });
+
+            },
+
+            /**
+             *  Gets some CSS properties for the accordion's title blocks
+             *
+             *  @return void
+             *
+             *  @access private
+             */
+            _get_titles_info = function(nobind) {
+
+                // reset the lookup array
+                titles = [];
+
+                // iterate through the content titles
+                $titles.each(function(index) {
+
+                    var
+
+                        // reference to the jQuery object
+                        $this = $(this),
+
+                        // the event that should trigger tabs' expansion/collapse
+                        event = !plugin.settings.collapsible && plugin.settings.toggle_on_mouseover ?
+                                    'mouseover' :
+                                    'click';
+
+                    // get some of the element's CSS properties
+                    // needed to correctly expand/collapse the block
+                    // and add them to our lookup array
+                    titles.push({
+                        height:     $this.outerHeight(),    // the title's height, including margins and padding
+                        style:      $this.attr('style'),    // the element's original style attribute (if any)
+                        element:    $this                   // cache the jQuery object
+                    });
+
+                    // if we need to handle the required event
+                    // (this method may also be called internally upon resizing of the browser window
+                    // case in which we don't need to re-attach the function to the required event)
+                    if (undefined === nobind)
+
+                        // handle the required event (click or mouseover - see above)
+                        $this.on(event, function() {
+
+                            // show the associated tab
+                            plugin.show(index);
+
+                        });
+
+                });
+
+            },
+
+            /**
+             *  A wrapper to JavaScript's parseInt() function.
+             *
+             *  @return int     Returns the integer representation of the string given as argument
+             *
+             *  @access private
+             */
+            _int = function(value) {
+
+                // convert value to an integer
+                value = parseInt(value, 10);
+
+                // if result is not a number (NaN) return 0, or the converted value otherwise
+                return isNaN(value) ? 0 : value;
+
+            };
 
         /**
          *  Expands a tab.
@@ -444,128 +565,7 @@
 
         };
 
-        /**
-         *  Gets some CSS properties for the accordion's tabs
-         *
-         *  @return void
-         *
-         *  @access private
-         */
-        var _get_blocks_info = function() {
-
-            // reset the lookup array
-            blocks = [];
-
-            // iterate through the tabs
-            $blocks.each(function(index) {
-
-                var
-
-                    // reference to the jQuery object
-                    $this = $(this),
-
-                    // save element's original style (if any)
-                    original_style = {
-                        style:  $this.attr('style')
-                    };
-
-                // temporary make set tab's "display" property to "block",
-                // in order to be able to get some of the element's CSS properties
-                $this.css({
-                    visibility: 'hidden',
-                    display:    'block'
-                });
-
-                // get some of the element's CSS properties
-                // needed to correctly expand/collapse the block
-                // and add them to our lookup array
-                blocks.push($.extend(original_style, {
-                    height:             $this.height(),
-                    outerHeight:        $this.outerHeight(),
-                    paddingTop:         _int($this.css('paddingTop')),
-                    paddingBottom:      _int($this.css('paddingBottom')),
-                    marginTop:          _int($this.css('marginTop')),
-                    marginBottom:       _int($this.css('marginBottom')),
-                    borderTopWidth:     _int($this.css('borderTopWidth')),
-                    borderBottomWidth:  _int($this.css('borderBottomWidth')),
-                    boxSizing:          $this.css('boxSizing'),
-                    element:            $this
-                }));
-
-                // all blocks are collapsed by default
-                plugin.hide(index, true);
-
-            });
-
-        };
-
-        /**
-         *  Gets some CSS properties for the accordion's title blocks
-         *
-         *  @return void
-         *
-         *  @access private
-         */
-        var _get_titles_info = function(nobind) {
-
-            // reset the lookup array
-            titles = [];
-
-            // iterate through the content titles
-            $titles.each(function(index) {
-
-                var
-
-                    // reference to the jQuery object
-                    $this = $(this),
-
-                    // the event that should trigger tabs' expansion/collapse
-                    event = !plugin.settings.collapsible && plugin.settings.toggle_on_mouseover ?
-                                'mouseover' :
-                                'click';
-
-                // get some of the element's CSS properties
-                // needed to correctly expand/collapse the block
-                // and add them to our lookup array
-                titles.push({
-                    height:     $this.outerHeight(),    // the title's height, including margins and padding
-                    style:      $this.attr('style'),    // the element's original style attribute (if any)
-                    element:    $this                   // cache the jQuery object
-                });
-
-                // if we need to handle the required event
-                // (this method may also be called internally upon resizing of the browser window
-                // case in which we don't need to re-attach the function to the required event)
-                if (undefined === nobind)
-
-                    // handle the required event (click or mouseover - see above)
-                    $this.on(event, function() {
-
-                        // show the associated tab
-                        plugin.show(index);
-
-                    });
-
-            });
-
-        };
-
-        /**
-         *  A wrapper to JavaScript's parseInt() function.
-         *
-         *  @return int     Returns the integer representation of the string given as argument
-         *
-         *  @access private
-         */
-        var _int = function(value) {
-
-            // convert value to an integer
-            value = parseInt(value, 10);
-
-            // if result is not a number (NaN) return 0, or the converted value otherwise
-            return isNaN(value) ? 0 : value;
-
-        };
+        plugin.settings = {};
 
         // fire it up!
         init();
