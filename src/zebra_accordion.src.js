@@ -21,7 +21,7 @@
  *  Read more {@link https://github.com/stefangabos/Zebra_Accordion/ here}
  *
  *  @author     Stefan Gabos <contact@stefangabos.ro>
- *  @version    1.2.7 (last revision: May 30, 2017)
+ *  @version    1.2.8 (last revision: September 16, 2017)
  *  @copyright  (c) 2011 - 2017 Stefan Gabos
  *  @license    http://www.gnu.org/licenses/lgpl-3.0.txt GNU LESSER GENERAL PUBLIC LICENSE
  *  @package    Zebra_Accordion
@@ -258,15 +258,9 @@
                     $title = titles[index].element, // reference to the title element
                     $block = block.element;         // reference to the tab element
 
-                // if a callback function needs to be called before expanding the tab
-                if (plugin.settings.onBeforeOpen && typeof plugin.settings.onBeforeOpen === 'function')
-
-                    // execute the callback function
-                    plugin.settings.onBeforeOpen(index, $title, $block);
-
-                // if any block can can be expanded/collapsed at any time
+                // if any number of blocks can can be expanded/collapsed
                 // and current block is already expanded, collapse it instead
-                if (plugin.settings.collapsible && $block.height() > 0) return plugin.hide(index, noFx);
+                if (plugin.settings.collapsible && $title.hasClass(plugin.settings.expanded_class)) return plugin.hide(index, noFx);
 
                 // if only a single block can be expanded at a time
                 else if (!plugin.settings.collapsible)
@@ -274,8 +268,8 @@
                     // iterate through the tabs
                     $titles.each(function(key) {
 
-                        // if this is the expanded tab
-                        if (titles[key].element.hasClass(plugin.settings.expanded_class)) {
+                        // if we found an expanded tab but it is not the one we're trying to expand
+                        if (titles[key].element.hasClass(plugin.settings.expanded_class) && key !== index) {
 
                             // collapse it
                             plugin.hide(key, noFx);
@@ -286,6 +280,12 @@
                         }
 
                     });
+
+                // if a callback function needs to be called before expanding the tab
+                if (plugin.settings.onBeforeOpen && typeof plugin.settings.onBeforeOpen === 'function')
+
+                    // execute the callback function
+                    plugin.settings.onBeforeOpen(index, $title, $block);
 
                 // add an extra class to the title element, to indicate that the element is expanded
                 // useful for custom styling of the title element, to give a better visual feedback to the users
