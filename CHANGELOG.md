@@ -1,3 +1,8 @@
+## version 1.2.8 (October 13, 2017)
+
+- fixed a bug where clicking on an already opened tab when the `collapsible` property is set to `false` would trigger the `onBeforeClose` event. See [#4](https://github.com/stefangabos/Zebra_Accordion/issues/4)
+- `collapsible` property can now also be `0` which works the same as when set to `FALSE` except that all tabs can be collapsed. See [#5](https://github.com/stefangabos/Zebra_Accordion/issues/5)
+
 ## version 1.2.7 (May 30, 2017)
 
 - performance improvements and source code tweaks
