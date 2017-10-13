@@ -21,7 +21,7 @@
  *  Read more {@link https://github.com/stefangabos/Zebra_Accordion/ here}
  *
  *  @author     Stefan Gabos <contact@stefangabos.ro>
- *  @version    1.2.8 (last revision: September 16, 2017)
+ *  @version    1.2.8 (last revision: October 13, 2017)
  *  @copyright  (c) 2011 - 2017 Stefan Gabos
  *  @license    http://www.gnu.org/licenses/lgpl-3.0.txt GNU LESSER GENERAL PUBLIC LICENSE
  *  @package    Zebra_Accordion
@@ -39,10 +39,13 @@
                                                                     //  Default is TRUE
 
                 collapsible:            false,                      //  If set to TRUE, an open block can also be collapsed
-                                                                    //  - in this case, all blocks can be collapsed; if set
-                                                                    //  to FALSE, an open block can be collapsed only by
-                                                                    //  opening another block - in this case, only a single
-                                                                    //  block is open at any given moment;
+                                                                    //  - in this case, all blocks can be collapsed;
+                                                                    //  if set to FALSE, an open block can be collapsed
+                                                                    //  only by opening another block - in this case, only
+                                                                    //  a single block is open at any given moment;
+                                                                    //  if set to 0, the behavior is the same when set to
+                                                                    //  FALSE with the difference that an open tab can
+                                                                    //  also be closed.
                                                                     //
                                                                     //  Default is FALSE
 
@@ -377,7 +380,8 @@
 
                 var block = blocks[index],          // get the block's properties
                     $title = titles[index].element, // reference to the title element
-                    $block = block.element;         // reference to the tab element
+                    $block = block.element,         // reference to the tab element
+                    collapsed_all = false;
 
                 // if any number of blocks can can be expanded/collapsed
                 // and current block is already expanded, collapse it instead
@@ -389,8 +393,11 @@
                     // iterate through the tabs
                     $titles.each(function(key) {
 
-                        // if we found an expanded tab but it is not the one we're trying to expand
-                        if (titles[key].element.hasClass(plugin.settings.expanded_class) && key !== index) {
+                        // if we found an expanded tab but it is not the one we're trying to expand or we're closing an opened tab when plugin.settings.collapsible === 0
+                        if (titles[key].element.hasClass(plugin.settings.expanded_class) && (key !== index || plugin.settings.collapsible === 0)) {
+
+                            // if we just collapsed all tabs when plugin.settings.collapsible === 0, set a flag
+                            if (key === index && plugin.settings.collapsible === 0) collapsed_all = true;
 
                             // collapse it
                             plugin.hide(key, noFx);
@@ -401,6 +408,9 @@
                         }
 
                     });
+
+                // if we just collapsed all tabs when plugin.settings.collapsible === 0, don't go further
+                if (collapsed_all) return false;
 
                 // if a callback function needs to be called before expanding the tab
                 if (plugin.settings.onBeforeOpen && typeof plugin.settings.onBeforeOpen === 'function')

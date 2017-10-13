@@ -148,10 +148,10 @@ $(document).ready(function() {
     </tr>
     <tr>
         <td valign="top"><code>collapsible</code></td>
-        <td valign="top"><em>boolean</em></td>
+        <td valign="top"><em>mixed</em></td>
         <td valign="top">FALSE</td>
         <td valign="top">
-            	When set to TRUE it indicates that all tabs can be collapsed; if set to FALSE, an expanded tab can be collapsed only by expanding another tab.
+            	- when set to <code>TRUE</code> it indicates that all tabs can be collapsed<br>- if set to <code>FALSE</code>, an expanded tab can be collapsed only by expanding another tab<br>- if set to <code>0</code>, the behavior is the same when set to <code>FALSE</code> with the difference that an open tab can also be closed.
         </td>
     </tr>
     <tr>
@@ -194,8 +194,8 @@ $(document).ready(function() {
         <td valign="top">0</td>
         <td valign="top">
             The index (0 based) of the tab to be expanded by default.<br>
-            The value of this property can also be boolean FALSE, indicating that all tabs should be collapsed by default.<br>
-            If the value of the <strong>collapsible</strong> property is TRUE, the value of this property can also be boolean TRUE, indicating that all tabs should be expanded by default. In this case, you can also provide <em>an array</em> of indexes to be expanded by default.
+            The value of this property can also be boolean <code>FALSE</code>, indicating that all tabs should be collapsed by default.<br>
+            If the value of the <strong>collapsible</strong> property is <code>TRUE</code>, the value of this property can also be boolean <code>TRUE</code>, indicating that all tabs should be expanded by default. In this case, you can also provide <em>an array</em> of indexes to be expanded by default.
         </td>
     </tr>
     <tr>
@@ -203,8 +203,8 @@ $(document).ready(function() {
         <td valign="top"><em>boolean</em></td>
         <td valign="top">FALSE</td>
         <td valign="top">
-            Set this to TRUE if tabs should be expanded when hovering the mouse over their associated <em>titles</em>.<br><br>
-            <blockquote>If the <strong>collapsible</strong> property is TRUE,  this property will always be considered as FALSE!</blockquote>
+            Set this to <code>TRUE</code> if tabs should be expanded when hovering the mouse over their associated <em>titles</em>.<br><br>
+            <blockquote>If the <strong>collapsible</strong> property is <code>TRUE</code>,  this property will always be considered as <code>FALSE</code>!</blockquote>
         </td>
     </tr>
     </tbody>
