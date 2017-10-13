@@ -60,10 +60,10 @@ Load the Zebra_Accordion jQuery plugin:
 Alternatively, you can load Zebra_Accordion from [JSDelivr CDN](https://www.jsdelivr.com/) like this:
 ```html
 <!-- for the most recent version -->
-<script src="https://cdn.jsdelivr.net/gh/stefangabos/Zebra_Accordion/dist/zebra_accordion.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/zebra_accordion/dist/zebra_accordion.min.js"></script>
 
 <!-- for a specific version -->
-<script src="https://cdn.jsdelivr.net/gh/stefangabos/Zebra_Accordion@1.2.5/dist/zebra_accordion.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/zebra_accordion@1.2.5/dist/zebra_accordion.min.js"></script>
 
 <!-- replacing "min" with "src" will serve you the non-compressed version -->
 ```
@@ -78,10 +78,10 @@ Load the style sheet file from a local source
 
 ```html
 <!-- for the most recent version -->
-<link rel="stylesheet" href=="https://cdn.jsdelivr.net/gh/stefangabos/Zebra_Accordion/dist/zebra_accordion.min.css">
+<link rel="stylesheet" href=="https://cdn.jsdelivr.net/npm/zebra_accordion/dist/zebra_accordion.min.css">
 
 <!-- for a specific version -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stefangabos/Zebra_Accordion@1.2.5/dist/zebra_accordion.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_accordion@1.2.5/dist/zebra_accordion.min.css">
 
 <!-- replacing "min" with "src" will serve you the non-compressed version -->
 ```
