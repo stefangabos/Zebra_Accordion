@@ -1,5 +1,15 @@
+body {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
 .syntaxhighlighter {
-    padding: 1em 0;
+    padding: .5em 0;
+}
+
+.top {
+    position: relative;
+    margin-left: 10px;
+    top: -10px;
 }
 
 dl.Zebra_Accordion {
@@ -7,10 +17,16 @@ dl.Zebra_Accordion {
 }
 
 dl.Zebra_Accordion dt {
-    background: #000;
-    color: #FFF;
+    background: #ccc;
+    color: #333;
     font-weight: bold;
-    padding: 5px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #FFF;
+}
+
+dl.Zebra_Accordion dt.Zebra_Accordion_Expanded {
+    background: #c09853;
+    color: #FFF;
 }
 
 dl.Zebra_Accordion dd {
@@ -19,6 +35,14 @@ dl.Zebra_Accordion dd {
     margin: 1px 0;
 }
 
-dl.Zebra_Accordion dt.Zebra_Accordion_Expanded {
-    background: #C40000;
+#Zebra_Accordion3 dt:before {
+    content: "▶";
+    margin-right: 10px;
+
+}
+
+#Zebra_Accordion3 dt.Zebra_Accordion_Expanded:before {
+    content: "▼";
+    margin-right: 10px;
+
 }

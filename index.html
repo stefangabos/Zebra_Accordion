@@ -7,22 +7,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="A tiny (3KB minified, ~1.3KB gzipped) accordion plugin for jQuery. It transforms a basic definition list, without requiring any specific markup, into a small-footprint, easily configurable, fully customizable, cross-browser accordion widget, useful for better organizing larger groups of content.">
-        <title>Zebra_Accordion - a tiny (3KB minified, ~1.3KB gzipped), easily configurable, fully customizable, cross-browser jQuery accordion plugin</title>
+        <meta name="description" content="A tiny (3KB minified, ~1.3KB gzipped) jQuery accordion plugin. It transforms a basic definition list, without requiring any specific markup, into a small-footprint, easily configurable, fully customizable, cross-browser accordion widget, useful for better organizing larger groups of content.">
+        <link rel="shortcut icon" href="favicon.ico">
+        <title>Zebra Accordion - a tiny (3KB minified, ~1.3KB gzipped), easily configurable, fully customizable, cross-browser jQuery accordion plugin</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCoreDefault.css" />
 
         <link rel="stylesheet" href="examples.css" type="text/css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_accordion/dist/zebra_accordion.min.css" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_accordion@latest/dist/zebra_accordion.min.css" type="text/css">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushCss.min.js"></script>
 
-        <script type="text/javascript">
+        <script>
             SyntaxHighlighter.defaults['toolbar'] = false;
             SyntaxHighlighter.all();
         </script>
@@ -31,7 +32,17 @@
 
     <body>
 
-        <a href="https://github.com/stefangabos/Zebra_Accordion"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Zebra Accordion</h1>
+                <p>a tiny, easily configurable, fully customizable, cross-browser jQuery accordion plugin</p>
+                <hr>
+                <p>
+                    <a href="https://github.com/stefangabos/Zebra_Accordion/archive/master.zip" class="btn btn-primary btn-lg" role="button" style="text-decoration: none">Download</a>
+                    <a href="https://github.com/stefangabos/Zebra_Accordion" class="btn btn-primary btn-lg" role="button" style="text-decoration: none">View on GitHub</a>
+                </p>
+            </div>
+        </div>
 
         <div class="container">
 
@@ -39,70 +50,103 @@
 
                 <div class="col-xs-12">
 
-                    <div class="page-header">
-                        <h1>Zebra_Accordion Demos</h1>
+                    <p>
+                        Zebra Accordion is a tiny (3KB minified, ~1.3KB gzipped) jQuery accordion plugin. It transforms a
+                        basic definition list, without requiring any specific markup, into a small-footprint, easily
+                        configurable, fully customizable, cross-browser accordion widget, useful for better organizing
+                        larger groups of content.
+                    </p>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            1. <a href="#setup">Setup</a><br>
+                            2. <a href="#basic-usage">Basic usage</a><br>
+                            3. <a href="#collapsing-expanding-all">Collapsing/expanding ALL tabs</a><br>
+                            4. <a href="#arrows">One way of adding arrows as state indicators</a><br>
+                        </div>
+                        <div class="col-sm-6">
+                        </div>
                     </div>
 
-                    <p>Zebra_Accordion is a tiny (3KB minified, ~1.3KB gzipped) accordion plugin for jQuery. It transforms a basic definition list, without requiring any specific markup, into a small-footprint, easily configurable, fully customizable, cross-browser accordion widget, useful for better organizing larger groups of content.</p>
+                    <hr>
 
-                    <h2><strong>Setup</strong></h2>
+                    <!-- =========================================================================================== -->
 
-                    <h5><strong>HTML</strong></h5>
+                    <h3><a name="setup"></a><strong>1.</strong> Setup</h3>
 
-                    <pre class="brush:xml">
-                        &lt;!doctype html&gt;
-                        &lt;html&gt;
-                            &lt;head&gt;
-                                &lt;meta charset="utf-8"&gt;
-                                &lt;title&gt;Zebra_Accordion Demo&lt;/title&gt;
-                                &lt;link rel="stylesheet" href="path/to/zebra_accordion.min.css" type="text/css"&gt;
-                                &lt;script type="text/javascript" src="path/to/jquery.js"&gt;&lt;/script&gt;
-                                &lt;script type="text/javascript" src="path/to/zebra_accordion.min.js"&gt;&lt;/script&gt;
-                            &lt;/head&gt;
-                            &lt;body&gt;
-                                &lt;dl class="Zebra_Accordion"&gt;
-                                    &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
-                                    &lt;dd&gt;
-                                        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                                        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                                        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                                    &lt;/dd&gt;
-                                    &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
-                                    &lt;dd&gt;
-                                        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                                        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                                        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                                    &lt;/dd&gt;
-                                    &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
-                                    &lt;dd&gt;
-                                        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                                        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                                        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                                    &lt;/dd&gt;
-                                    &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
-                                    &lt;dd&gt;
-                                        Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
-                                        Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
-                                        Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
-                                    &lt;/dd&gt;
-                                &lt;/dl&gt;
-                            &lt;/body&gt;
-                        &lt;/html&gt;
+                    <br><p>A basic definition list is all that it is required. We add the <code>Zebra_Accordion</code> class just
+                    because we have some minimal properties defined in the plugin's CSS file, that make sure that the
+                    content is initially collapsed and that the content headers (the one that expand content) have the
+                    cursor set to <code>pointer</code>. Obsiously, you don't have to include the plugin's CSS file, and
+                    you can write your own using whatever class name and ID you see fit making sure to initialize the
+                    plugin with it later on.</p>
+
+                    <br><p>The plugin's CSS</p>
+
+                    <pre class="brush:css">
+                        .Zebra_Accordion dd {
+                            display: none;
+                        }
+
+                        .Zebra_Accordion dt {
+                            cursor: pointer;
+                        }
                     </pre>
 
-                    <h5><strong>CSS</strong></h5>
+                    <p>The required HTML markup</p>
+
+                    <pre class="brush:xml">
+                        &lt;dl class="Zebra_Accordion"&gt;
+                            &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
+                            &lt;dd&gt;
+                                Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                                Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                                Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                            &lt;/dd&gt;
+                            &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
+                            &lt;dd&gt;
+                                Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                                Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                                Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                            &lt;/dd&gt;
+                            &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
+                            &lt;dd&gt;
+                                Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                                Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                                Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                            &lt;/dd&gt;
+                            &lt;dt&gt;Lorem ipsum dolor sit amet consectetuer&lt;/dt&gt;
+                            &lt;dd&gt;
+                                Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                                Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                                Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                            &lt;/dd&gt;
+                        &lt;/dl&gt;
+                    </pre>
+
+                    <p>Since Zebra Accordion provides no styling for the definition list, it is up to you to set it up.
+                    For the purpose of this example this is the style we'll use:</p>
 
                     <pre class="brush:css">
                     dl.Zebra_Accordion { width: 100% }
-                    dl.Zebra_Accordion dt { background: #000; color: #FFF; font-weight: bold; padding: 5px }
-                    dl.Zebra_Accordion dd { background: #EFEFEF; padding: 15px; margin: 1px 0 }
 
+                    /* the collapsed titles */
+                    dl.Zebra_Accordion dt { background: #000; color: #FFF; font-weight: bold; padding: 5px }
+
+                    /* the expanded titles */
                     dl.Zebra_Accordion dt.Zebra_Accordion_Expanded { background: #C40000 }
+
+                    /* the content */
+                    dl.Zebra_Accordion dd { background: #EFEFEF; padding: 15px; margin: 1px 0 }
                     </pre>
 
                     <hr>
 
-                    <h2><strong>Basic usage</strong></h2>
+                    <h3><a name="basic-usage"></a><strong>2.</strong> Basic usage</h3>
+
+                    <br><p>JavaScript</p>
 
                     <pre class="brush:js">
                     $(document).ready(function() {
@@ -110,7 +154,7 @@
                     });
                     </pre>
 
-                    <h5><strong>Result</strong></h5><br>
+                    <br><p>Result</p><br>
 
                     <dl class="Zebra_Accordion" id="Zebra_Accordion1">
                         <dt>Lorem ipsum dolor sit amet consectetuer</dt>
@@ -139,9 +183,15 @@
                         </dd>
                     </dl>
 
+                    <a href="#top" class="pull-right clearfix top small">To the top</a>
+
                     <hr>
 
-                    <h2><strong>Collapsing/expanding ALL tabs</strong></h2>
+                    <!-- =========================================================================================== -->
+
+                    <h3><a name="collapsing-expanding-all"></a><strong>3.</strong> Collapsing/expanding ALL tabs</h3>
+
+                    <br><p>JavaScript</p>
 
                     <pre class="brush:js">
                     $(document).ready(function() {
@@ -151,7 +201,7 @@
                     });
                     </pre>
 
-                    <h5><strong>Result</strong></h5><br>
+                    <br><p>Result</p><br>
 
                     <dl class="Zebra_Accordion" id="Zebra_Accordion2">
                         <dt>Lorem ipsum dolor sit amet consectetuer</dt>
@@ -180,7 +230,82 @@
                         </dd>
                     </dl>
 
-                    <br><br><br><br><br><br>
+                    <a href="#top" class="pull-right clearfix top small">To the top</a>
+
+                    <hr>
+
+                    <!-- =========================================================================================== -->
+
+                    <h3><a name="arrows"></a><strong>4.</strong> One way of adding arrows as state indicators</h3>
+
+                    <p>One way of doing this is to use Unicode characters and the <code>before</code> pseudo selector.
+                    We will use right oriented arrow when tabs are not expanded, and arrows pointing down when the content
+                    is expanded.</p>
+
+                    <blockquote><small>Note that for this way of doing it, we don't have to change the markup!</small></blockquote>
+
+                    <br><p>CSS</p>
+
+                    <pre class="brush:css">
+                    .Zebra_Accordion dt:before {
+                        content: "▶";
+                        margin-right: 10px;
+
+                    }
+
+                    .Zebra_Accordion dt.Zebra_Accordion_Expanded:before {
+                        content: "▼";
+                        margin-right: 10px;
+
+                    }
+                    </pre>
+
+                    <br><p>JavaScript</p>
+
+                    <pre class="brush:js">
+                    $(document).ready(function() {
+                        var myAccordion = new $.Zebra_Accordion('.Zebra_Accordion');
+                    });
+                    </pre>
+
+                    <br><p>Result</p><br>
+
+                    <dl class="Zebra_Accordion" id="Zebra_Accordion3">
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                        <dt>Lorem ipsum dolor sit amet consectetuer</dt>
+                        <dd>
+                            Lorem ipsum dolor sit amet consectetuer facilisis lacinia sapien ac et.
+                            Quis hendrerit neque congue pretium iaculis justo laoreet orci elit condimentum.
+                            Eros natoque Curabitur accumsan eget quis porttitor Sed Vestibulum amet sed.
+                        </dd>
+                    </dl>
+
+                    <a href="#top" class="pull-right clearfix top small">To the top</a>
+
+                    <hr>
+
+                    <br>
+
+                    <p class="text-center"><small>copyright &copy; 2011-2018 <a href="https://github.com/stefangabos/">stefan gabos</a></small></p>
+
+                    <br><br>
 
                 </div>
 
@@ -188,9 +313,9 @@
 
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/zebra_accordion/dist/zebra_accordion.min.js"></script>
-        <script type="text/javascript" src="examples.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/zebra_accordion@latest/dist/zebra_accordion.min.js"></script>
+        <script src="examples.js"></script>
 
     </body>
 

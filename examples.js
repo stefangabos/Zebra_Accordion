@@ -6,4 +6,6 @@ $(document).ready(function() {
         collapsible: true
     });
 
+    new $.Zebra_Accordion('#Zebra_Accordion3');
+
 });
