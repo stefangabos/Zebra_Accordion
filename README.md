@@ -4,7 +4,7 @@
 
 *A tiny (3 KB minified, 1.3KB gzipped), easily configurable, fully customizable, cross-browser jQuery accordion plugin*
 
-[![npm](https://img.shields.io/npm/v/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Total](https://img.shields.io/npm/dt/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Monthly](https://img.shields.io/npm/dm/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![License](https://img.shields.io/npm/l/zebra_accordion.svg)](https://github.com/stefangabos/Zebra_Accordion/blob/master/LICENSE.md)
+[![npm](https://img.shields.io/npm/v/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Total](https://img.shields.io/npm/dt/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Monthly](https://img.shields.io/npm/dm/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![](https://data.jsdelivr.com/v1/package/npm/zebra_accordion/badge?style=rounded)](https://www.jsdelivr.com/package/npm/zebra_accordion)  [![License](https://img.shields.io/npm/l/zebra_accordion.svg)](https://github.com/stefangabos/Zebra_Accordion/blob/master/LICENSE.md)
 
 Zebra Accordion is a tiny (3KB minified, ~1.3KB gzipped) jQuery accordion plugin. It transforms a basic definition list,
  without requiring any specific markup, into a small-footprint, easily configurable, fully customizable, cross-browser accordion widget, useful for better organizing larger groups of content.
@@ -37,7 +37,7 @@ Zebra Accordion is available as a [npm package](https://www.npmjs.com/package/ze
 npm install zebra_accordion --save
 ```
 
-Zebra Tooltips is also available as a [Bower package](http://bower.io/). To install it use:
+Zebra Accordion is also available as a [Bower package](http://bower.io/). To install it use:
 
 ```bash
 # the "--save" argument adds the plugin as a dependency in bower.json
