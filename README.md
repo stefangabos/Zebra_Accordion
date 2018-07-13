@@ -18,7 +18,7 @@ Zebra Accordion is a tiny (3KB minified, ~1.3KB gzipped) jQuery accordion plugin
  - allows for tabs to expand on mouse over, not just on click
  - if an expanded tab's content is not in the viewport it automatically scrolls the browser window so that the content is visible
  - callback functions can be used for further customizations
--  works in pretty much any browser - Firefox, Chrome, Safari, Edge, Opera and Internet Explorer 6+
+ - works in pretty much any browser - Firefox, Chrome, Safari, Edge, Opera and Internet Explorer 6+
 
 ## Demo
 
