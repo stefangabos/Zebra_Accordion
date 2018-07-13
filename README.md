@@ -4,7 +4,7 @@
 
 *A tiny (3 KB minified, 1.3KB gzipped), easily configurable, fully customizable, cross-browser accordion jQuery plugin*
 
-[![npm](https://img.shields.io/npm/v/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Total](https://img.shields.io/npm/dt/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Monthly](https://img.shields.io/npm/dm/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![License](https://img.shields.io/npm/l/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion)
+[![npm](https://img.shields.io/npm/v/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Total](https://img.shields.io/npm/dt/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Monthly](https://img.shields.io/npm/dm/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![License](https://img.shields.io/npm/l/zebra_accordion.svg)](https://github.com/stefangabos/Zebra_Accordion/blob/master/LICENSE.md)
 
 Zebra_Accordion is a tiny (3KB minified, ~1.3KB gzipped) accordion plugin for jQuery. It transforms a basic definition list,
  without requiring any specific markup, into a small-footprint, easily configurable, fully customizable, cross-browser accordion widget, useful for better organizing larger groups of content.
