@@ -1,12 +1,12 @@
 <img src="https://raw.githubusercontent.com/stefangabos/zebrajs/master/docs/images/logo.png" alt="zebrajs" align="right">
 
-# Zebra_Accordion &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Zebra_Accordion%20-%20A%20tiny,%20easily%20configurable,%20fully%20customizable,%20cross-browser%20jQuery%20accordion%20plugin&url=https://github.com/stefangabos/Zebra_Accordion&via=stefangabos&hashtags=accordion,collapsible,jquery)
+# Zebra Accordion &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Zebra_Accordion%20-%20A%20tiny,%20easily%20configurable,%20fully%20customizable,%20cross-browser%20jQuery%20accordion%20plugin&url=https://github.com/stefangabos/Zebra_Accordion&via=stefangabos&hashtags=accordion,collapsible,jquery)
 
 *A tiny (3 KB minified, 1.3KB gzipped), easily configurable, fully customizable, cross-browser jQuery accordion plugin*
 
 [![npm](https://img.shields.io/npm/v/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Total](https://img.shields.io/npm/dt/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Monthly](https://img.shields.io/npm/dm/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![License](https://img.shields.io/npm/l/zebra_accordion.svg)](https://github.com/stefangabos/Zebra_Accordion/blob/master/LICENSE.md)
 
-Zebra_Accordion is a tiny (3KB minified, ~1.3KB gzipped) jQuery accordion plugin. It transforms a basic definition list,
+Zebra Accordion is a tiny (3KB minified, ~1.3KB gzipped) jQuery accordion plugin. It transforms a basic definition list,
  without requiring any specific markup, into a small-footprint, easily configurable, fully customizable, cross-browser accordion widget, useful for better organizing larger groups of content.
 
 ## Features
@@ -26,11 +26,11 @@ See the [demos](http://stefangabos.github.io/Zebra_Accordion/)
 
 ## Requirements
 
-Zebra_Accordion has no dependencies other than jQuery 1.7.0+
+Zebra Accordion has no dependencies other than jQuery 1.7.0+
 
 ## Installation
 
-Zebra_Accordion is available as a [npm package](https://www.npmjs.com/package/zebra_accordion). To install it use:
+Zebra Accordion is available as a [npm package](https://www.npmjs.com/package/zebra_accordion). To install it use:
 
 ```bash
 # the "--save" argument adds the plugin as a dependency in packages.json
@@ -53,13 +53,13 @@ First, load jQuery from a CDN and provide a fallback to a local source like:
 <script>window.jQuery || document.write('<script src="path/to/jquery-3.3.1.js"><\/script>')</script>
 ```
 
-Load the Zebra_Accordion jQuery plugin:
+Load the Zebra Accordion jQuery plugin:
 
 ```html
 <script src="path/to/zebra_accordion.min.js"></script>
 ```
 
-Alternatively, you can load Zebra_Accordion from [JSDelivr CDN](https://www.jsdelivr.com/package/npm/zebra_accordion) like this:
+Alternatively, you can load Zebra Accordion from [JSDelivr CDN](https://www.jsdelivr.com/package/npm/zebra_accordion) like this:
 
 ```html
 <!-- for the most recent version, not recommended in production -->
@@ -97,7 +97,7 @@ Load the style sheet file from a local source
 
 You need a basic definition list for your HTML markup
 
-> Don't forget to add the `Zebra_Accordion` class to the list container! If you'll [have a look](https://github.com/stefangabos/Zebra_Accordion/blob/master/dist/zebra_accordion.css) you will see that all it does is to set `display:hidden` the all the tabs and add `cursor:pointer` to titles, so it will not add overweight to your CSS and that you will have to style the accordion to suit your needs.
+> Don't forget to add the `Zebra Accordion` class to the list container! If you'll [have a look](https://github.com/stefangabos/Zebra_Accordion/blob/master/dist/zebra_accordion.css) you will see that all it does is to set `display:hidden` the all the tabs and add `cursor:pointer` to titles, so it will not add overweight to your CSS and that you will have to style the accordion to suit your needs.
 
 ```html
 <dl class="Zebra_Accordion">
