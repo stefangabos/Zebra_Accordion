@@ -1,17 +1,13 @@
 <img src="https://raw.githubusercontent.com/stefangabos/zebrajs/master/docs/images/logo.png" alt="zebrajs" align="right">
 
-# Zebra_Accordion
+# Zebra_Accordion &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Zebra_Accordion%20-%20A%20tiny,%20easily%20configurable,%20fully%20customizable,%20cross-browser%20jQuery%20accordion%20plugin&url=https://github.com/stefangabos/Zebra_Accordion&via=stefangabos&hashtags=accordion,collapsible,jquery)
 
-*A tiny (3 KB minified, 1.3KB gzipped), easily configurable, fully customizable, cross-browser accordion jQuery plugin*
+*A tiny (3 KB minified, 1.3KB gzipped), easily configurable, fully customizable, cross-browser jQuery accordion plugin*
 
 [![npm](https://img.shields.io/npm/v/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Total](https://img.shields.io/npm/dt/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Monthly](https://img.shields.io/npm/dm/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![License](https://img.shields.io/npm/l/zebra_accordion.svg)](https://github.com/stefangabos/Zebra_Accordion/blob/master/LICENSE.md)
 
-Zebra_Accordion is a tiny (3KB minified, ~1.3KB gzipped) accordion plugin for jQuery. It transforms a basic definition list,
+Zebra_Accordion is a tiny (3KB minified, ~1.3KB gzipped) jQuery accordion plugin. It transforms a basic definition list,
  without requiring any specific markup, into a small-footprint, easily configurable, fully customizable, cross-browser accordion widget, useful for better organizing larger groups of content.
-
-## Support the development of this project
-
-[![Donate](https://img.shields.io/badge/Be%20kind%20%7C%20Donate%20$3%20with%20-%20PayPal%20-brightgreen.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NBM9XKB7XAB5L)
 
 ## Features
 
@@ -22,7 +18,11 @@ Zebra_Accordion is a tiny (3KB minified, ~1.3KB gzipped) accordion plugin for jQ
  - allows for tabs to expand on mouse over, not just on click
  - if an expanded tab's content is not in the viewport it automatically scrolls the browser window so that the content is visible
  - callback functions can be used for further customizations
- - works in all major browsers (Firefox, Opera, Safari, Chrome, Internet Explorer 6+)
+-  works in pretty much any browser - Firefox, Chrome, Safari, Edge, Opera and Internet Explorer 6+
+
+## Demo
+
+See the [demos](http://stefangabos.github.io/Zebra_Accordion/)
 
 ## Requirements
 
@@ -32,14 +32,16 @@ Zebra_Accordion has no dependencies other than jQuery 1.7.0+
 
 Zebra_Accordion is available as a [npm package](https://www.npmjs.com/package/zebra_accordion). To install it use:
 
-```
-npm install zebra_accordion
+```bash
+# the "--save" argument adds the plugin as a dependency in packages.json
+npm install zebra_accordion --save
 ```
 
-Zebra_Accordion is also available as a [Bower package](http://bower.io/). To install it use:
+Zebra Tooltips is also available as a [Bower package](http://bower.io/). To install it use:
 
-```
-bower install zebra_accordion
+```bash
+# the "--save" argument adds the plugin as a dependency in bower.json
+bower install zebra_accordion --save
 ```
 
 ## How to use
@@ -47,8 +49,8 @@ bower install zebra_accordion
 First, load jQuery from a CDN and provide a fallback to a local source like:
 
 ```html
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script>window.jQuery || document.write('<script src="path/to/jquery-3.2.1.js"><\/script>')</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="path/to/jquery-3.3.1.js"><\/script>')</script>
 ```
 
 Load the Zebra_Accordion jQuery plugin:
@@ -57,13 +59,16 @@ Load the Zebra_Accordion jQuery plugin:
 <script src="path/to/zebra_accordion.min.js"></script>
 ```
 
-Alternatively, you can load Zebra_Accordion from [JSDelivr CDN](https://www.jsdelivr.com/) like this:
+Alternatively, you can load Zebra_Accordion from [JSDelivr CDN](https://www.jsdelivr.com/package/npm/zebra_accordion) like this:
+
 ```html
-<!-- for the most recent version -->
-<script src="https://cdn.jsdelivr.net/npm/zebra_accordion/dist/zebra_accordion.min.js"></script>
+<!-- for the most recent version, not recommended in production -->
+<script
+  src="https://cdn.jsdelivr.net/npm/zebra_accordion@latest/dist/zebra_accordion.min.js"></script>
 
 <!-- for a specific version -->
-<script src="https://cdn.jsdelivr.net/npm/zebra_accordion@1.2.5/dist/zebra_accordion.min.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/zebra_accordion@1.2.8/dist/zebra_accordion.min.js"></script>
 
 <!-- replacing "min" with "src" will serve you the non-compressed version -->
 ```
@@ -74,21 +79,25 @@ Load the style sheet file from a local source
 <link rel="stylesheet" href="path/to/zebra_accordion.min.css">
 ```
 
-...or from [JSDelivr CDN](https://www.jsdelivr.com/)
+...or from [JSDelivr CDN](https://www.jsdelivr.com/package/npm/zebra_accordion)
 
 ```html
 <!-- for the most recent version -->
-<link rel="stylesheet" href=="https://cdn.jsdelivr.net/npm/zebra_accordion/dist/zebra_accordion.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/zebra_accordion@latest/dist/zebra_accordion.min.css">
 
 <!-- for a specific version -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_accordion@1.2.5/dist/zebra_accordion.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/zebra_accordion@1.2.8/dist/zebra_accordion.min.css">
 
 <!-- replacing "min" with "src" will serve you the non-compressed version -->
 ```
 
 You need a basic definition list for your HTML markup
 
-> Don't forget to add the `Zebra_Accordion` class to the list container! If you haven't had a look, all it does is to set `display:hidden` the all the tabs and add `cursor:pointer` to titles, so it will not add too much to your CSS.
+> Don't forget to add the `Zebra_Accordion` class to the list container! If you'll [have a look](https://github.com/stefangabos/Zebra_Accordion/blob/master/dist/zebra_accordion.css) you will see that all it does is to set `display:hidden` the all the tabs and add `cursor:pointer` to titles, so it will not add overweight to your CSS and that you will have to style the accordion to suit your needs.
 
 ```html
 <dl class="Zebra_Accordion">
@@ -123,9 +132,12 @@ Now, within the DOM-ready event do
 
 ```javascript
 $(document).ready(function() {
+
     new $.Zebra_Accordion($('.Zebra_Accordion'));
+
 });
 ```
+
 ## Configuration options
 
 ## Properties
@@ -151,7 +163,9 @@ $(document).ready(function() {
         <td valign="top"><em>mixed</em></td>
         <td valign="top">FALSE</td>
         <td valign="top">
-            	- when set to <code>TRUE</code> it indicates that all tabs can be collapsed<br>- if set to <code>FALSE</code>, an expanded tab can be collapsed only by expanding another tab<br>- if set to <code>0</code>, the behavior is the same when set to <code>FALSE</code> with the difference that an open tab can also be closed.
+            	- when set to <code>TRUE</code> it indicates that all tabs can be collapsed<br>
+                - if set to <code>FALSE</code>, an expanded tab can be collapsed only by expanding another tab<br>
+                - if set to <code>0</code>, the behavior is the same when set to <code>FALSE</code> with the difference that an open tab can also be closed.
         </td>
     </tr>
     <tr>
@@ -315,6 +329,12 @@ var myAccordion = new $.Zebra_Accordion($('#accordion'));
 myAccordion.hide(0);
 ```
 
-## Demo
+## Support the development of this project
 
-See the [demos](http://stefangabos.github.io/Zebra_Accordion/)
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NBM9XKB7XAB5L)
+
+## Sponsors
+
+Cross browser/device testing is done with
+
+[![BrowserStack](https://github.com/stefangabos/Zebra_Dialog/raw/master/examples/browserstack.png)](https://www.browserstack.com/)
