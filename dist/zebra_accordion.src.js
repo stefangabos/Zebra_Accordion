@@ -16,7 +16,7 @@
  *  -   if an expanded tab's content is not in the viewport it automatically scrolls the browser window so that the
  *      content is visible;
  *  -   callback functions can be used for further customization;
- *  -   works in all major browsers (Firefox, Opera, Safari, Chrome, Internet Explorer 6+)
+ *  -   works in pretty much any browser - Firefox, Chrome, Safari, Edge, Opera and Internet Explorer 6+
  *
  *  Read more {@link https://github.com/stefangabos/Zebra_Accordion/ here}
  *
