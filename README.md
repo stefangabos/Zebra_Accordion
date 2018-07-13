@@ -22,7 +22,7 @@ Zebra Accordion is a tiny (3KB minified, ~1.3KB gzipped) jQuery accordion plugin
 
 ## Demo
 
-See the [demos](http://stefangabos.github.io/Zebra_Accordion/)
+See the [demos](https://stefangabos.github.io/Zebra_Accordion/)
 
 ## Requirements
 
@@ -190,7 +190,7 @@ $(document).ready(function() {
         <td valign="top"><em>integer</em></td>
         <td valign="top">600</td>
         <td valign="top">
-            If an tab's content is not entirely visible once it is expanded, the browser window will be scrolled so that the entire content is visible (if is possible).<br>
+            If an tab's content is not entirely visible once it is expanded, the browser window will be scrolled so that the entire content is visible (if it is possible).<br>
             This value represents the speed (in milliseconds) used for scrolling browser window to the right position.
         </td>
     </tr>
@@ -209,7 +209,7 @@ $(document).ready(function() {
         <td valign="top">
             The index (0 based) of the tab to be expanded by default.<br>
             The value of this property can also be boolean <code>FALSE</code>, indicating that all tabs should be collapsed by default.<br>
-            If the value of the <strong>collapsible</strong> property is <code>TRUE</code>, the value of this property can also be boolean <code>TRUE</code>, indicating that all tabs should be expanded by default. In this case, you can also provide <em>an array</em> of indexes to be expanded by default.
+            If the value of the <code>collapsible</code> property is <code>TRUE</code>, the value of this property can also be boolean <code>TRUE</code>, indicating that all tabs should be expanded by default. In this case, you can also provide <code>an array</code> of indexes to be expanded by default.
         </td>
     </tr>
     <tr>
@@ -218,7 +218,7 @@ $(document).ready(function() {
         <td valign="top">FALSE</td>
         <td valign="top">
             Set this to <code>TRUE</code> if tabs should be expanded when hovering the mouse over their associated <em>titles</em>.<br><br>
-            <blockquote>If the <strong>collapsible</strong> property is <code>TRUE</code>,  this property will always be considered as <code>FALSE</code>!</blockquote>
+            <blockquote>If the <code>collapsible</code> property is <code>TRUE</code>, this property will always be considered as <code>FALSE</code>!</blockquote>
         </td>
     </tr>
     </tbody>
@@ -295,11 +295,11 @@ Expands a tab.
 
 `index` - the 0-based index of the tab to expand
 
-`noFx` - *(optional)* - if set to TRUE, the tab will be instantly expanded without animation.
+`noFx` - *(optional)* - if set to <code>TRUE</code>, the tab will be instantly expanded without animation.
 
 Default is FALSE.
 
-`noScroll` - *(optional)* - if set to TRUE, the browser window will not be scrolled to the newly expanded tab.
+`noScroll` - *(optional)* - if set to <code>TRUE</code>, the browser window will not be scrolled to the newly expanded tab.
 
 Default is FALSE.
 
@@ -318,7 +318,7 @@ Expands a tab.
 
 `index` - the 0-based index of the tab to collapse
 
-`noFx` - *(optional)* - if set to TRUE, the tab will be instantly collapsed without animation.
+`noFx` - *(optional)* - if set to <code>TRUE</code>, the tab will be instantly collapsed without animation.
 
 Default is FALSE.
 
