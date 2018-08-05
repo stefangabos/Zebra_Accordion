@@ -1,15 +1,22 @@
 body {
-    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-family: Tahoma, Helvetica, Arial, sans-serif;
+}
+
+.top {
+    border-bottom: 1px solid #eee;
+    display: block;
+    margin-bottom: 33px;
+}
+
+.top a {
+    background: #FFF;
+    padding-right: 10px;
+    position: relative;
+    top: 8px;
 }
 
 .syntaxhighlighter {
     padding: .5em 0;
-}
-
-.top {
-    position: relative;
-    margin-left: 10px;
-    top: -10px;
 }
 
 dl.Zebra_Accordion {
