@@ -311,9 +311,7 @@
                         $this = $(this),
 
                         // the event that should trigger tabs' expansion/collapse
-                        event = !plugin.settings.collapsible && plugin.settings.toggle_on_mouseover ?
-                                    'mouseover' :
-                                    'click';
+                        event = !plugin.settings.collapsible && plugin.settings.toggle_on_mouseover ? 'mouseover' : 'click';
 
                     // get some of the element's CSS properties
                     // needed to correctly expand/collapse the block
@@ -552,24 +550,24 @@
                     // ...using the speed as indicated in the settings
                     }, (noFx ? 0 : plugin.settings.hide_speed),
 
-                        // and once the animation is complete
-                        function() {
+                    // and once the animation is complete
+                    function() {
 
-                            // if a callback function needs to be called after closing the tab
-                            if (plugin.settings.onClose && typeof plugin.settings.onClose === 'function')
+                        // if a callback function needs to be called after closing the tab
+                        if (plugin.settings.onClose && typeof plugin.settings.onClose === 'function')
 
-                                // execute the callback function
-                                plugin.settings.onClose(index, $title, $block);
+                            // execute the callback function
+                            plugin.settings.onClose(index, $title, $block);
 
-                            // set some of tab element's CSS properties
-                            $block.css({
-                                display:            'none',
-                                visibility:         'visible',
-                                borderTopWidth:     block.borderTopWidth,
-                                borderBottomWidth:  block.borderBottomWidth
-                            });
-
+                        // set some of tab element's CSS properties
+                        $block.css({
+                            display:            'none',
+                            visibility:         'visible',
+                            borderTopWidth:     block.borderTopWidth,
+                            borderBottomWidth:  block.borderBottomWidth
                         });
+
+                    });
 
             }
 
