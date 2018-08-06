@@ -11,3 +11,4 @@ Gruntfile.js export-ignore
 bower.json export-ignore
 eslint.json export-ignore
 package.json export-ignore
+package-lock.json export-ignore
