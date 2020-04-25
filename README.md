@@ -90,7 +90,7 @@ Load the style sheet file from a local source
 <!-- for a specific version -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/zebra_accordion@1.2.8/dist/zebra_accordion.min.css">
+  href="https://cdn.jsdelivr.net/npm/zebra_accordion@1.2.9/dist/zebra_accordion.min.css">
 
 <!-- replacing "min" with "src" will serve you the non-compressed version -->
 ```
