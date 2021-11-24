@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/stefangabos/zebrajs/master/docs/images/logo.png" alt="zebrajs" align="right">
 
-# Zebra Accordion &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Zebra_Accordion%20-%20A%20tiny,%20easily%20configurable,%20fully%20customizable,%20cross-browser%20jQuery%20accordion%20plugin&url=https://github.com/stefangabos/Zebra_Accordion&via=stefangabos&hashtags=accordion,collapsible,jquery)
+# Zebra Accordion &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=A+tiny,+easily+configurable,+fully+customizable,+cross-browser+jQuery+accordion+plugin&url=https://github.com/stefangabos/Zebra_Accordion&via=stefangabos&hashtags=jquery,javascript)
 
 *A tiny (3 KB minified, 1.3KB gzipped), easily configurable, fully customizable, cross-browser jQuery accordion plugin*
 
@@ -19,6 +19,15 @@ Zebra Accordion is a tiny (3KB minified, ~1.3KB gzipped) jQuery accordion plugin
  - if an expanded tab's content is not in the viewport it automatically scrolls the browser window so that the content is visible
  - callback functions can be used for further customizations
  - works in pretty much any browser - Firefox, Chrome, Safari, Edge, Opera and Internet Explorer 6+
+
+## 🎂 Support the development of this project
+
+Your support means a lot and it keeps me motivated to keep working on open source projects.<br>
+If you like this project please ⭐ it by clicking on the star button at the top of the page.<br>
+If you are feeling generous, you can buy me a coffee by donating through PayPal, or you can become a sponsor.<br>
+Either way - **Thank you!** 🎉
+
+[<img src="https://img.shields.io/github/stars/stefangabos/zebra_accordion?color=green&label=star%20it%20on%20GitHub" width="132" height="20" alt="Star it on GitHub">](https://github.com/stefangabos/Zebra_Accordion) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NBM9XKB7XAB5L) [<img src="https://img.shields.io/badge/-Sponsor-fafbfc?logo=GitHub%20Sponsors">](https://github.com/sponsors/stefangabos)
 
 ## Demo
 
@@ -328,10 +337,6 @@ var myAccordion = new $.Zebra_Accordion($('#accordion'));
 // collapse the first tab
 myAccordion.hide(0);
 ```
-
-## Support the development of this project
-
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NBM9XKB7XAB5L)
 
 ## Sponsors
 
