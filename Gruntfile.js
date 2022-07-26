@@ -97,7 +97,8 @@ module.exports = function(grunt) {
             options: {
                 compress: true,
                 mangle: true,
-                beautify: false
+                beautify: false,
+                ie8: true
             },
             build: {
                 src: 'src/zebra_accordion.src.js',
