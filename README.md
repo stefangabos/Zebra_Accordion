@@ -164,23 +164,23 @@ $(document).ready(function() {
     <tr>
         <td valign="top"><code>animate_opacity</code></td>
         <td valign="top"><em>boolean</em></td>
-        <td valign="top">TRUE</td>
+        <td valign="top"><code>true</code></td>
         <td valign="top">Should a tab's opacity be also animated when expanding/collapsing?</td>
     </tr>
     <tr>
         <td valign="top"><code>collapsible</code></td>
         <td valign="top"><em>mixed</em></td>
-        <td valign="top">FALSE</td>
+        <td valign="top"><code>false</code></td>
         <td valign="top">
-            	- when set to <code>TRUE</code> it indicates that all tabs can be collapsed<br>
-                - if set to <code>FALSE</code>, an expanded tab can be collapsed only by expanding another tab<br>
-                - if set to <code>0</code>, the behavior is the same when set to <code>FALSE</code> with the difference that an open tab can also be closed.
+            	- when set to <code>true</code> it indicates that all tabs can be collapsed<br>
+                - if set to <code>false</code>, an expanded tab can be collapsed only by expanding another tab<br>
+                - if set to <code>0</code>, the behavior is the same when set to <code>false</code> with the difference that an open tab can also be closed.
         </td>
     </tr>
     <tr>
         <td valign="top"><code>expanded_class</code></td>
         <td valign="top"><em>string</em></td>
-        <td valign="top">Zebra_Accordion_Expanded</td>
+        <td valign="top"><code>Zebra_Accordion_Expanded</code></td>
         <td valign="top">
             The name of the class to append to an expanded tab's associated <em>title</em> element.<br>
             Use it to customize the aspect of expanded tabs.
@@ -189,7 +189,7 @@ $(document).ready(function() {
     <tr>
         <td valign="top"><code>hide_speed</code></td>
         <td valign="top"><em>integer</em></td>
-        <td valign="top">400</td>
+        <td valign="top"><code>400</code></td>
         <td valign="top">
             The speed (in milliseconds) to use when collapsing a tab.
         </td>
@@ -197,7 +197,7 @@ $(document).ready(function() {
     <tr>
         <td valign="top"><code>scroll_speed</code></td>
         <td valign="top"><em>integer</em></td>
-        <td valign="top">600</td>
+        <td valign="top"><code>600</code></td>
         <td valign="top">
             If an tab's content is not entirely visible once it is expanded, the browser window will be scrolled so that the entire content is visible (if it is possible).<br>
             This value represents the speed (in milliseconds) used for scrolling browser window to the right position.
@@ -206,7 +206,7 @@ $(document).ready(function() {
     <tr>
         <td valign="top"><code>show_speed</code></td>
         <td valign="top"><em>integer</em></td>
-        <td valign="top">400</td>
+        <td valign="top"><code>400</code></td>
         <td valign="top">
             The speed (in milliseconds) to use when expanding a tab.
         </td>
@@ -214,7 +214,7 @@ $(document).ready(function() {
     <tr>
         <td valign="top"><code>show</code></td>
         <td valign="top"><em>mixed</em></td>
-        <td valign="top">0</td>
+        <td valign="top"><code>0</code></td>
         <td valign="top">
             The index (0 based) of the tab to be expanded by default.<br>
             The value of this property can also be boolean <code>FALSE</code>, indicating that all tabs should be collapsed by default.<br>
@@ -224,10 +224,10 @@ $(document).ready(function() {
     <tr>
         <td valign="top"><code>toggle_on_mouseover</code></td>
         <td valign="top"><em>boolean</em></td>
-        <td valign="top">FALSE</td>
+        <td valign="top"><code>false</code></td>
         <td valign="top">
             Set this to <code>TRUE</code> if tabs should be expanded when hovering the mouse over their associated <em>titles</em>.<br><br>
-            <blockquote>If the <code>collapsible</code> property is <code>TRUE</code>, this property will always be considered as <code>FALSE</code>!</blockquote>
+            <blockquote>If the <code>collapsible</code> property is <code>true</code>, this property will always be considered as <code>false</code>!</blockquote>
         </td>
     </tr>
     </tbody>
@@ -306,11 +306,11 @@ Expands a tab.
 
 `noFx` - *(optional)* - if set to <code>TRUE</code>, the tab will be instantly expanded without animation.
 
-Default is FALSE.
+Default is <code>false</code>.
 
 `noScroll` - *(optional)* - if set to <code>TRUE</code>, the browser window will not be scrolled to the newly expanded tab.
 
-Default is FALSE.
+Default is <code>false</code>.
 
 ```javascript
 var myAccordion = new $.Zebra_Accordion($('#accordion'));
@@ -329,7 +329,7 @@ Expands a tab.
 
 `noFx` - *(optional)* - if set to <code>TRUE</code>, the tab will be instantly collapsed without animation.
 
-Default is FALSE.
+Default is <code>false</code>.
 
 ```javascript
 var myAccordion = new $.Zebra_Accordion($('#accordion'));
