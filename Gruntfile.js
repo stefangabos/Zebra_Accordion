@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
 
     // required for sass
-    const sass = require('node-sass');
+    const sass = require('sass');
 
     grunt.initConfig({
 
@@ -57,9 +57,6 @@ module.exports = function(grunt) {
          *  http://eslint.org/docs/rules/
          **************************************************************************************************************/
         'eslint' : {
-            options: {
-                overrideConfigFile: 'eslint.json'
-            },
             src: ['src/zebra_accordion.src.js']
         },
 
