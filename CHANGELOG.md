@@ -1,3 +1,11 @@
+## version 1.2.11 (May 07, 2024)
+
+- minor maintenance update
+
+## version 1.2.10 (May 02, 2024)
+
+- minor maintenance update
+
 ## version 1.2.9 (July 14, 2018)
 
 - updated examples and examples page layout
