@@ -1,7 +1,3 @@
-## version 1.2.12 (May 07, 2024)
-
-- minor maintenance update
-
 ## version 1.2.11 (May 07, 2024)
 
 - minor maintenance update
