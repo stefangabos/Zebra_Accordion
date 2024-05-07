@@ -21,8 +21,8 @@
  *  Read more {@link https://github.com/stefangabos/Zebra_Accordion/ here}
  *
  *  @author     Stefan Gabos <contact@stefangabos.ro>
- *  @version    1.2.9 (last revision: July 13, 2018)
- *  @copyright  (c) 2011 - 2018 Stefan Gabos
+ *  @version    1.2.11 (last revision: May 07, 2024)
+ *  @copyright  (c) 2011 - 2024 Stefan Gabos
  *  @license    http://www.gnu.org/licenses/lgpl-3.0.txt GNU LESSER GENERAL PUBLIC LICENSE
  *  @package    Zebra_Accordion
  */
