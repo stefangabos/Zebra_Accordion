@@ -9,6 +9,6 @@ src/ export-ignore
 .npmignore export-ignore
 Gruntfile.js export-ignore
 bower.json export-ignore
-eslint.json export-ignore
+eslint.config.js export-ignore
 package.json export-ignore
 package-lock.json export-ignore

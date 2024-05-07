@@ -7,7 +7,7 @@ src/*
 .npmignore
 Gruntfile.js
 bower.json
-eslint.json
+eslint.config.js
 package.json
 package-lock.json
 todo.txt
