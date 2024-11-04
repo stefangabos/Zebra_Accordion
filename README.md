@@ -2,13 +2,13 @@
 
 # Zebra Accordion &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=A+tiny,+easily+configurable,+fully+customizable,+cross-browser+jQuery+accordion+plugin&url=https://github.com/stefangabos/Zebra_Accordion&via=stefangabos&hashtags=jquery,javascript)
 
-*A tiny (3 KB minified, 1.3KB gzipped), easily configurable, fully customizable, cross-browser jQuery accordion plugin*
+*A lightweight, customizable, and cross-browser jQuery accordion plugin - 3KB minified (1.3KB gzipped) with easy configuration options*
 
 [![npm](https://img.shields.io/npm/v/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Total](https://img.shields.io/npm/dt/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Monthly](https://img.shields.io/npm/dm/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![](https://data.jsdelivr.com/v1/package/npm/zebra_accordion/badge?style=rounded)](https://www.jsdelivr.com/package/npm/zebra_accordion)  [![License](https://img.shields.io/npm/l/zebra_accordion.svg)](https://github.com/stefangabos/Zebra_Accordion/blob/master/LICENSE.md)
 
 Zebra Accordion is a lightweight, user-friendly jQuery plugin designed for creating smooth, interactive accordion menus. Its compact size (3KB minified) ensures your web projects remain fast and responsive. The plugin's extensive customization options allow developers to easily modify animations, durations, and other behavior for a tailored user experience. With cross-browser support and simple implementation, Zebra_Accordion is an excellent choice for building collapsible content sections, FAQs, and sidebars that enhance usability without compromising performance.
 
-## Key features of the jQuery accordion plugin
+## Key features of this jQuery accordion plugin
 
  - no additional markup required other than a basic definition list
  - no default style allowing you to fully customize it to suit your needs
