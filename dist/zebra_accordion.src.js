@@ -198,7 +198,7 @@
                         // reference to the title element
                         var $this = titles[index].element;
 
-                        // if we find an opened tab, save the tab's index for later
+                        // if we find an open tab, save the tab's index for later
                         if ($this.hasClass(plugin.settings.expanded_class)) open.push(index);
 
                         // set the title element's "style" attribute back to its original state (before running the plugin)
