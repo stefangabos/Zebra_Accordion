@@ -6,10 +6,9 @@
 
 [![npm](https://img.shields.io/npm/v/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Total](https://img.shields.io/npm/dt/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![Monthly](https://img.shields.io/npm/dm/zebra_accordion.svg)](https://www.npmjs.com/package/zebra_accordion) [![](https://data.jsdelivr.com/v1/package/npm/zebra_accordion/badge?style=rounded)](https://www.jsdelivr.com/package/npm/zebra_accordion)  [![License](https://img.shields.io/npm/l/zebra_accordion.svg)](https://github.com/stefangabos/Zebra_Accordion/blob/master/LICENSE.md)
 
-Zebra Accordion is a tiny (3KB minified, ~1.3KB gzipped) jQuery accordion plugin. It transforms a basic definition list,
- without requiring any specific markup, into a small-footprint, easily configurable, fully customizable, cross-browser accordion widget, useful for better organizing larger groups of content.
+Zebra Accordion is a lightweight, user-friendly jQuery plugin designed for creating smooth, interactive accordion menus. Its compact size (3KB minified) ensures your web projects remain fast and responsive. The plugin's extensive customization options allow developers to easily modify animations, durations, and other behavior for a tailored user experience. With cross-browser support and simple implementation, Zebra_Accordion is an excellent choice for building collapsible content sections, FAQs, and sidebars that enhance usability without compromising performance.
 
-## Features
+## Key features of the jQuery accordion plugin
 
  - no additional markup required other than a basic definition list
  - no default style allowing you to fully customize it to suit your needs
@@ -165,8 +164,8 @@ $(document).ready(function() {
         <td valign="top"><em>mixed</em></td>
         <td valign="top"><code>false</code></td>
         <td valign="top">
-            	- when set to <code>true</code> it indicates that all tabs can be collapsed<br>
-                - if set to <code>false</code>, an expanded tab can be collapsed only by expanding another tab<br>
+            	- when set to <code>true</code> it indicates that all tabs can be collapsed<br><br>
+                - if set to <code>false</code>, an expanded tab can be collapsed only by expanding another tab<br><br>
                 - if set to <code>0</code>, the behavior is the same when set to <code>false</code> with the difference that an open tab can also be closed.
         </td>
     </tr>
@@ -175,7 +174,7 @@ $(document).ready(function() {
         <td valign="top"><em>string</em></td>
         <td valign="top"><code>Zebra_Accordion_Expanded</code></td>
         <td valign="top">
-            The name of the class to append to an expanded tab's associated <em>title</em> element.<br>
+            The name of the class to append to an expanded tab's associated <em>title</em> element.<br><br>
             Use it to customize the aspect of expanded tabs.
         </td>
     </tr>
@@ -192,7 +191,7 @@ $(document).ready(function() {
         <td valign="top"><em>integer</em></td>
         <td valign="top"><code>600</code></td>
         <td valign="top">
-            If an tab's content is not entirely visible once it is expanded, the browser window will be scrolled so that the entire content is visible (if it is possible).<br>
+            If an tab's content is not entirely visible once it is expanded, the browser window will be scrolled so that the entire content is visible (if it is possible).<br><br>
             This value represents the speed (in milliseconds) used for scrolling browser window to the right position.
         </td>
     </tr>
@@ -209,8 +208,8 @@ $(document).ready(function() {
         <td valign="top"><em>mixed</em></td>
         <td valign="top"><code>0</code></td>
         <td valign="top">
-            The index (0 based) of the tab to be expanded by default.<br>
-            The value of this property can also be boolean <code>FALSE</code>, indicating that all tabs should be collapsed by default.<br>
+            The index (0 based) of the tab to be expanded by default.<br><br>
+            The value of this property can also be boolean <code>FALSE</code>, indicating that all tabs should be collapsed by default.<br><br>
             If the value of the <code>collapsible</code> property is <code>TRUE</code>, the value of this property can also be boolean <code>TRUE</code>, indicating that all tabs should be expanded by default. In this case, you can also provide <code>an array</code> of indexes to be expanded by default.
         </td>
     </tr>
