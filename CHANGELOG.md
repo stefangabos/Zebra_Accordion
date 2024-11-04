@@ -3,6 +3,7 @@
 - added ARIA attributes for collapsed/expanded state to improve accessibility
 - substantial performance improvement by using event delegation
 - minor code refactoring and swapping out some jQuery code with native ES6 equivalent
+- this version contains ES6 code so it will not work with versions of Internet Explorer lower than 11 - use 1.2.11 if you need that
 
 ## version 1.2.11 (May 07, 2024)
 
