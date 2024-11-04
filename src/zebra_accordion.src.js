@@ -176,7 +176,7 @@
                         else
 
                             // iterate through the tabs that need to be expanded
-                            $.each(plugin.settings.show, function(index) {
+                            plugin.settings.show.forEach((value, index) => {
 
                                 // expand each tab
                                 plugin.show(plugin.settings.show[index], true, true);
@@ -225,7 +225,7 @@
                     if (open.length > 0)
 
                         // re-open them now
-                        $.each(open, function(index) {
+                        open.forEach((value, index) => {
 
                             plugin.show(open[index], true, true);
 
