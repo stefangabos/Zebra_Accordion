@@ -1,3 +1,9 @@
+## version 1.3.0 (November 04, 2024)
+
+- added ARIA attributes for collapsed/expanded state to improve accessibility
+- substantial performance improvement by using event delegation
+- minor code refactoring and swapping out some jQuery code with native ES6 equivalent
+
 ## version 1.2.11 (May 07, 2024)
 
 - minor maintenance update
