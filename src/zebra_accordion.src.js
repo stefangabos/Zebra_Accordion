@@ -208,7 +208,7 @@
 
                     // iterate through the title elements and get some information about each element
                     // also, make sure we don't re-bind callback functions to events
-                    _get_titles_info(false);
+                    _get_titles_info();
 
                     // iterate through the tab elements
                     $blocks.each(function(index) {
@@ -230,6 +230,14 @@
                             plugin.show(open[index], true, true);
 
                         });
+
+                });
+
+                // the event that should trigger tabs' expansion/collapse (click or mouseover)
+                $element.on(!plugin.settings.collapsible && plugin.settings.toggle_on_mouseover ? 'mouseover' : 'click', 'dt', function() {
+
+                    // show the associated tab
+                    plugin.show($titles.index(this));
 
                 });
 
@@ -297,21 +305,16 @@
              *
              *  @access private
              */
-            _get_titles_info = function(nobind) {
+            _get_titles_info = function() {
 
                 // reset the lookup array
                 titles = [];
 
                 // iterate through the content titles
-                $titles.each(function(index) {
+                $titles.each(function() {
 
-                    var
-
-                        // reference to the jQuery object
-                        $this = $(this),
-
-                        // the event that should trigger tabs' expansion/collapse
-                        event = !plugin.settings.collapsible && plugin.settings.toggle_on_mouseover ? 'mouseover' : 'click';
+                    // reference to the jQuery object
+                    var $this = $(this);
 
                     // get some of the element's CSS properties
                     // needed to correctly expand/collapse the block
@@ -321,19 +324,6 @@
                         style:      $this.attr('style'),    // the element's original style attribute (if any)
                         element:    $this                   // cache the jQuery object
                     });
-
-                    // if we need to handle the required event
-                    // (this method may also be called internally upon resizing of the browser window
-                    // case in which we don't need to re-attach the function to the required event)
-                    if (undefined === nobind)
-
-                        // handle the required event (click or mouseover - see above)
-                        $this.on(event, function() {
-
-                            // show the associated tab
-                            plugin.show(index);
-
-                        });
 
                 });
 
