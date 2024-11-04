@@ -1,6 +1,6 @@
 {
   "name": "zebra_accordion",
-  "description": "A tiny, easily configurable, fully customizable, cross-browser jQuery accordion plugin",
+  "description": "A lightweight, customizable, and cross-browser jQuery accordion plugin with easy configuration options",
   "author": {
     "name": "Stefan Gabos",
     "email": "contact@stefangabos.ro"
