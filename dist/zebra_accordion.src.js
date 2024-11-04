@@ -408,7 +408,7 @@
 
                 // add an extra class to the title element, to indicate that the element is expanded
                 // useful for custom styling of the title element, to give a better visual feedback to the users
-                $title.addClass(plugin.settings.expanded_class);
+                $title.addClass(plugin.settings.expanded_class).attr('aria-expanded', 'true');
 
                 // for the expanded block
                 $block
@@ -513,7 +513,7 @@
                     plugin.settings.onBeforeClose(index, $title, $block);
 
                 // remove the extra class added when the block was expanded
-                $title.removeClass(plugin.settings.expanded_class);
+                $title.removeClass(plugin.settings.expanded_class).attr('aria-expanded', 'false');
 
                 // for the tab to hide
                 $block
