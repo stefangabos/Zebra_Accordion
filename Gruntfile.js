@@ -73,6 +73,7 @@ module.exports = function(grunt) {
                     'console':          true,
                     'jQuery':           true
                 },
+                esversion:  6,          //  allow ECMAScript 6 (2015) specific syntax
                 browser:    true,       //  defines globals exposed by modern browsers (like `document` and `navigator`)
                 bitwise:    true,       //  prohibits the use of bitwise operators such as ^ (XOR), | (OR) and others
                 curly:      false,      //  whether to always put curly braces around blocks in loops and conditionals
