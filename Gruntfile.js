@@ -57,17 +57,6 @@ module.exports = function(grunt) {
         'cssmin': {
             beutify: {
                 options: {
-                    compatibility: {
-                        properties: {
-                            ieBangHack: true,
-                            ieFilters: true,
-                            iePrefixHack: true,
-                            ieSuffixHack: true
-                        },
-                        selectors: {
-                            ie7Hack: true
-                        }
-                    },
                     format: {
                         breaks: {
                             afterAtRule: true,
@@ -96,17 +85,6 @@ module.exports = function(grunt) {
             },
             minify: {
                 options: {
-                    compatibility: {
-                        properties: {
-                            ieBangHack: true,
-                            ieFilters: true,
-                            iePrefixHack: true,
-                            ieSuffixHack: true
-                        },
-                        selectors: {
-                            ie7Hack: true
-                        }
-                    },
                     level: 2
                 },
                 files: {
