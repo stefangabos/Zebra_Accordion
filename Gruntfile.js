@@ -55,7 +55,7 @@ module.exports = function(grunt) {
          *  https://github.com/gruntjs/grunt-contrib-cssmin
          **************************************************************************************************************/
         'cssmin': {
-            beutify: {
+            beautify: {
                 options: {
                     format: {
                         breaks: {
